@@ -1,0 +1,95 @@
+@use "/src/scss/util/" as u;
+
+.nav__wrapper {
+	position: fixed;
+	z-index: 2;
+	width: 100vw;
+
+	background-color: var(--cl-primary-shade);
+
+	& + * {
+		--nav-height: clamp(70px, 3.28125rem + 2.5vw, 80px);
+
+		padding-top: var(--nav-height);
+	}
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: u.rem(16) 0;
+	background-color: var(--cl-background-primary);
+
+	&__links {
+		display: flex;
+		gap: u.rem(20);
+		padding: 0;
+	}
+
+	&__links li {
+		list-style: none;
+	}
+
+	&__home-link {
+		max-width: 10ch;
+
+		font-family: var(--serif);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.7rem + 0.8vw, u.rem(20));
+		font-weight: 700;
+		line-height: 1.2;
+		text-wrap: wrap;
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
+		color: white;
+
+		opacity: 1;
+	}
+
+	&__link,
+	&__button {
+		font-family: var(--serif);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.5rem + 1.33vw, u.rem(20));
+		font-weight: 500;
+		text-decoration: none;
+		text-wrap: nowrap;
+		color: white;
+
+		opacity: 0.6;
+		transition-property: opacity;
+		transition: 800ms;
+
+		&:hover {
+			opacity: 1;
+			transition: 400ms;
+		}
+	}
+
+	&__link {
+		display: block;
+
+		&--active {
+			opacity: 1;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			border-bottom: solid 2px transparent;
+
+			transition-property: border-color;
+			transition: 800ms;
+		}
+
+		&:hover,
+		&--active {
+			&::after {
+				border-bottom: solid 2px white;
+				transition: 400ms;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes transform-x {
+	from {
+		transform: translateX(-4rem);
+	}
+}
+
+@keyframes grow {
+	to {
+		transform: scale(1.2);
+	}
+}

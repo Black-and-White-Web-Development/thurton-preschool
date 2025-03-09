@@ -1,0 +1,11 @@
+@use "/src/scss/util/" as u;
+
+.video {
+	&__description {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(16);
+
+		margin-block-start: u.rem(16);
+	}
+}

@@ -1,0 +1,56 @@
+@use "/src/scss/util" as u;
+
+.list {
+	&__description {
+		margin-block-end: u.rem(16);
+		text-wrap: balance;
+	}
+
+	&__items-container {
+		padding: u.rem(4) u.rem(16);
+
+		background-color: var(--background-primary-shade);
+		border-radius: var(--br-light);
+
+		@include u.breakpoint(medium) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: u.rem(16);
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			border-bottom: solid 1.5px var(--background-secondary);
+		}
+
+		@include u.breakpoint(medium) {
+			&:nth-child(2n):nth-last-child(-n + 2),
+			&:nth-child(2n-1):nth-last-child(-n + 2) {
+				border-bottom: none !important;
+			}
+		}
+	}
+
+	.ordered {
+		counter-reset: list-counter;
+
+		& .list__item {
+			counter-increment: list-counter;
+			display: flex;
+			align-items: center;
+
+			padding: u.rem(8) 0;
+
+			&::before {
+				content: counter(list-counter) ". ";
+				margin-inline-end: u.rem(8);
+				font-weight: bold;
+			}
+
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--background-secondary-shade);
+			}
+		}
+	}
+}

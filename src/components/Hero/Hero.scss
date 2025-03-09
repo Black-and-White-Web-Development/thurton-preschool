@@ -1,0 +1,107 @@
+@use "/src/scss/util" as u;
+
+.hero {
+	--navigation-height: 80px;
+
+	padding-block: 0;
+
+	&__image-container {
+		--cover-image: url("/src/assets/images/terence-allbright-01-mobile.jpg");
+
+		min-height: min(50vh, 400px);
+		background-image: var(--cover-image);
+		background-position: center 25%;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		@include u.breakpoint(medium) {
+			--cover-image: url("/src/assets/images/terence-allbright-01.jpg");
+			--clip-path: polygon(10% 100%, 100% 100%, 100% 0, 0 0);
+
+			-webkit-clip-path: var(--clip-path);
+			clip-path: var(--clip-path);
+		}
+
+		@include u.breakpoint(large) {
+			min-height: 800px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: u.rem(32);
+
+		padding-block: 32px;
+
+		@include u.breakpoint(medium) {
+			min-height: 60vh;
+		}
+	}
+
+	&__heading {
+		margin-block-end: 0;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		& .emphasis {
+			display: block;
+			margin-block-start: u.rem(20);
+			border-top: solid 3px var(--heading-secondary);
+			padding-top: u.rem(8);
+
+			color: var(--heading-secondary);
+
+			font-weight: 700;
+		}
+	}
+
+	&__subheading {
+		font-size: u.rem(20);
+		font-size: clamp(u.rem(20), 1.15rem + 0.51vw, u.rem(24));
+		line-height: 1.2;
+	}
+
+	&__cta {
+		padding: u.rem(12) u.rem(32);
+		border: solid 3px var(--cl-primary);
+		border-radius: var(--br-light);
+
+		font-family: var(--sans-serif);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.5625rem + 1vw, u.rem(20));
+		font-weight: 600;
+		letter-spacing: 1px;
+
+		color: var(--background-primary);
+		background-color: var(--cl-primary);
+
+		transition-property: color, background-color;
+		transition-duration: 800ms;
+
+		&::after {
+			content: "➞";
+			display: inline-block;
+			margin-inline-start: 1ch;
+
+			transition-property: transform;
+			transition-duration: 800ms;
+		}
+
+		&:hover {
+			color: var(--cl-primary);
+			background-color: var(--background-primary-shade);
+			transition-duration: 200ms;
+
+			&::after {
+				transition-duration: 200ms;
+				transform: translateX(50%);
+			}
+		}
+
+		&:active {
+			background-color: var(--cl-secondary);
+		}
+	}
+}

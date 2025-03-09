@@ -1,0 +1,63 @@
+@use "/src/scss/util" as u;
+
+.nav__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu-button {
+	background-color: transparent;
+	border: none;
+
+	display: flex;
+	align-items: center;
+	gap: u.rem(8);
+	opacity: 1;
+
+	&__label {
+		font-family: var(--sans-serif);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.5rem + 1.33vw, u.rem(20));
+		text-transform: uppercase;
+		font-weight: 500;
+		text-decoration: none;
+		text-wrap: nowrap;
+		color: white;
+	}
+
+	&__icon {
+		&.open {
+			animation: grow 200ms alternate linear;
+			animation-iteration-count: 2;
+		}
+	}
+}
+
+#nav--mobile {
+	display: block;
+
+	& .nav__links {
+		overflow: hidden;
+
+		flex-direction: column;
+		gap: u.rem(8);
+
+		max-height: 0;
+
+		transition: max-height 400ms ease-in-out, padding 400ms ease-in-out;
+	}
+
+	& .nav__link {
+		font-size: u.rem(20);
+
+		&::after {
+			border-bottom: none;
+		}
+	}
+
+	& .nav__links.open {
+		max-height: 300px;
+		padding-top: 24px;
+	}
+}

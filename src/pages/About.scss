@@ -1,0 +1,50 @@
+@use "/src/scss/util/" as u;
+
+.about {
+	&__content-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(32);
+
+		& > * {
+			flex: 1;
+		}
+
+		@include u.breakpoint(large) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__media {
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+		gap: u.rem(16);
+
+		& > * {
+			flex: 1;
+		}
+
+		@include u.breakpoint(medium) {
+			flex-direction: row;
+			align-items: center;
+			gap: u.rem(32);
+		}
+
+		@include u.breakpoint(large) {
+			flex-direction: column;
+			position: sticky;
+			top: 128px;
+		}
+	}
+
+	&__portrait {
+		border-radius: var(--br-light);
+		max-height: 50vh;
+		max-width: auto;
+
+		object-fit: cover;
+		object-position: 0 25%;
+	}
+}

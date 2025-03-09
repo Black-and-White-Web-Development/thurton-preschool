@@ -1,0 +1,67 @@
+@use "../util" as u;
+
+:root {
+	--box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
+	--box-shadow-light: 2px 2px 8px hsl(0, 0%, 0%, 0.5);
+	--box-shadow: var(--box-shadow-dark);
+
+	--br-light: 0.25rem;
+	--br-mid: 0.5rem;
+	--br-heavy: 1rem;
+}
+
+* {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	color: var(--foreground-tint);
+	background-color: var(--background-primary);
+}
+
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
+
+section {
+	padding-block: u.rem(48);
+}
+
+input,
+textarea {
+	font-family: inherit;
+}
+
+button {
+	display: block;
+	width: fit-content;
+	cursor: pointer;
+}
+
+a {
+	color: initial;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+ul,
+ol {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}

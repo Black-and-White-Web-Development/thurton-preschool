@@ -1,0 +1,45 @@
+@use "/src/scss/util" as u;
+
+.description-list {
+	&__description {
+		margin-block-end: u.rem(16);
+		text-wrap: balance;
+	}
+
+	&__items-container {
+		display: flex;
+		gap: u.rem(8);
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		padding: u.rem(8) u.rem(16);
+
+		background-color: var(--cl-secondary-tint);
+		border-radius: var(--br-light);
+
+		@include u.breakpoint-down(small) {
+			width: 100%;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			background-color: var(--cl-primary-shade);
+		}
+	}
+
+	&__term,
+	&__details {
+		font-family: var(--sans-serif);
+	}
+
+	&__term {
+		font-weight: 400;
+	}
+
+	&__details {
+		font-weight: 600;
+	}
+}

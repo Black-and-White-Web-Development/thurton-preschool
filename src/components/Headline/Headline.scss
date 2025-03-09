@@ -1,0 +1,57 @@
+@use "/src/scss/util/" as u;
+
+.headline {
+	display: flex;
+	gap: 4rem;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	padding-top: 2rem;
+	border-top: solid 4px var(--background-secondary);
+
+	@include u.breakpoint-down(small) {
+		flex-direction: column;
+		gap: 2rem;
+		margin-top: 1rem;
+		border-top: none;
+	}
+
+	& > * {
+		flex: 1;
+	}
+
+	&__heading {
+		position: sticky;
+		top: 7rem;
+		z-index: 1;
+
+		height: fit-content;
+
+		background: linear-gradient(160deg, var(--foreground-tint), var(--midground) 60%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+
+		animation: transform-x 1200ms ease-out, fade 2400ms;
+
+		@include u.breakpoint-down(small) {
+			border-bottom: solid 4px var(--background-secondary);
+			padding-bottom: 1rem;
+		}
+	}
+
+	&__content > p {
+		font-size: 1.2rem;
+		text-wrap: pretty;
+		color: var(--foreground);
+	}
+
+	&__content > p:first-child {
+		font-weight: 600;
+	}
+
+	&__content > p:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}

@@ -1,0 +1,8 @@
+@use "/src/scss/util" as u;
+
+.media {
+	&__items {
+		display: grid;
+		gap: u.rem(48);
+	}
+}

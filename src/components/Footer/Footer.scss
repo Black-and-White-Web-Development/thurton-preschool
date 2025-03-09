@@ -1,0 +1,74 @@
+@use "/src/scss/util/" as u;
+
+.footer {
+	padding-block: u.rem(48);
+
+	color: hsl(0, 0%, 95%);
+	background-color: hsl(0, 0%, 0%);
+
+	&__copyright-wrapper {
+		margin-block-end: u.rem(48);
+	}
+
+	&__copyright-heading {
+		margin-block-end: u.rem(8);
+		font-size: u.rem(20);
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: var(--cl-secondary);
+	}
+
+	&__content-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: u.rem(32) u.rem(16);
+
+		@include u.breakpoint(medium) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(4);
+	}
+
+	&__links-heading {
+		margin-block-end: u.rem(8);
+
+		font-family: var(--sans-serif);
+		font-size: u.rem(16);
+		font-weight: 700;
+		text-transform: uppercase;
+
+		color: hsl(0, 0%, 100%);
+	}
+
+	&__link {
+		max-width: fit-content;
+
+		font-family: var(--sans-serif);
+		font-size: u.rem(16);
+		font-weight: 400;
+		color: hsl(0, 0%, 90%);
+
+		transition-property: opacity;
+		transition-duration: 400ms;
+
+		&:hover {
+			opacity: 0.6;
+		}
+
+		&--social {
+			display: flex;
+			align-items: center;
+			gap: u.rem(4);
+		}
+	}
+
+	&__link-icon {
+		width: u.rem(24);
+		filter: invert(1);
+	}
+}

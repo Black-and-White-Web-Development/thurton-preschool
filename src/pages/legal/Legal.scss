@@ -1,0 +1,32 @@
+@use "/src/scss/util" as u;
+
+.legal {
+	&__subheading {
+		margin-block-start: u.rem(16);
+		color: var(--foreground-tint);
+	}
+
+	&__paragraph {
+		margin-block: u.rem(8);
+	}
+
+	&__list {
+		margin-block: u.rem(8);
+	}
+
+	&__list-item {
+		list-style: disc;
+		margin-block: u.rem(4);
+		margin-inline-start: u.rem(16);
+	}
+
+	&__link {
+		color: var(--cl-primary);
+		font-weight: 600;
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+		}
+	}
+}

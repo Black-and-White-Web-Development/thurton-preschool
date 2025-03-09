@@ -1,0 +1,218 @@
+[
+	{
+		"id": "1",
+		"title": "Three Songs",
+		"year": "1988",
+		"instruments": ["Soprano", "Piano"],
+		"description": "Poems by Stevie Smith. For Penelope Walmsley-Clark. First performed by Penelope Walmsley-Clark and Terence Allbright on March 28th 1999 at The Regis School of Music, Bognor Regis.",
+		"link": "https://composersedition.com/terence-allbright-three-songs/"
+	},
+	{
+		"id": "2",
+		"title": "Four Pieces",
+		"year": "1996",
+		"instruments": ["Piano"],
+		"description": "First performed by Karen Kingsley at Portsmouth Grammar School on February 27th 1999, in a concert presented by the Portsmouth and District Composers' Alliance.",
+		"link": "https://composersedition.com/terence-allbright-four-pieces/"
+	},
+	{
+		"id": "3",
+		"title": "Three Partsongs",
+		"year": "1996",
+		"instruments": ["SATB choir a capella"],
+		"description": "First performed by The Allegri Singers, directed by Michael Nicholas, at Beckenham Parish Church on June 21st 1997. Poems by Stevie Smith reproduced by kind permission of the Executors of James MacGibbon.",
+		"link": "https://composersedition.com/terence-allbright-three-partsongs/"
+	},
+	{
+		"id": "4",
+		"title": "Two Songs",
+		"year": "1999",
+		"instruments": ["Baritone", "Mezzo Soprano", "Piano"],
+		"description": "First performed by Stephen Roberts with Terence Allbright at the Petworth Festival, 24th July 2001 in St Mary's Church, Petworth. Poems by Stevie Smith reproduced by permission of the Executors of James MacGibbon.",
+		"link": "https://composersedition.com/terence-allbright-two-songs-for-baritone-or-mezzo-soprano-and-piano/"
+	},
+	{
+		"id": "5",
+		"title": "Inventions",
+		"year": "2000",
+		"instruments": ["Piano"],
+		"description": "I composed this work with a competition in mind (it didn't win): entries had to be based on an aspect of the music of J. S. Bach. I made a scale of the 9 different tonic notes of Bach's Inventions and Sinfonias and transposed this to begin on each of its own notes, giving 9 scales - one for each of my 9 Inventions. There are 4 two-part movements, 4 three-part movements in the form of a theme with 3 variations, and finally a four-part chorale.",
+		"link": "https://composersedition.com/terence-allbright-inventions/"
+	},
+	{
+		"id": "6",
+		"title": "Sonnet",
+		"year": "2002",
+		"instruments": ["Choir", "Organ"],
+		"description": "Upon the Ensignes of Christes Crucifyinge by William Alabaster, Commissioned by Wells Cathedral for Malcolm Archer and the Cathedral Choir, and first performed by them at Evensong on 19th November 2002.",
+		"link": "https://composersedition.com/terence-allbright-sonnet/"
+	},
+	{
+		"id": "7",
+		"title": "Two Pieces",
+		"year": "2003",
+		"instruments": ["Clarinet in B-flat", "Piano"],
+		"description": "In a simple way, these two short pieces separate the basic musical elements of song & dance. The first has a meandering melody over pizzicato chords in a repeated sequence which grows in the middle, and then shortens again; and the second consists of energetic interwoven rhythm patterns, repeated with more intensity.",
+		"link": "https://composersedition.com/terence-allbright-two-pieces-for-clarinet-in-bb-and-viola/"
+	},
+	{
+		"id": "8",
+		"title": "Hymn of the Nativity",
+		"year": "2005",
+		"instruments": ["Choir and ensemble"],
+		"description": "Words by Richard Crashaw. Commissioned by Sir Geoffry and Lady Pattie for the silver jubiliee of the Sutton & Bignor Singers, and first performed in the Service of Lessons and Carols at the Church of St John the Baptist, Sutton, West Sussex, on December 18 2005 by the Sutton & Bignor Singers and Ensemble, conducted by the composer.",
+		"link": "https://composersedition.com/terence-allbright-hymn-of-the-nativity/"
+	},
+	{
+		"id": "9",
+		"title": "Two Pierrot Songs",
+		"year": "2007 - 2008",
+		"instruments": ["Voice", "Piano"],
+		"description": "Poems from Pierrot Lunaire by Albert Giraud. L'Église was first performed by Irène Hoogveld and Lana Bode on May 10th 2018 in a recital at Silk Street Music Hall, Guildhall School of Music and Drama. Cuisine Lyrique was first performed by Jane Manning OBE and the composer on November 14th 2007 at St John's Church, Kingston, Surrey, in a recital presented by Kingston University.",
+		"link": "https://composersedition.com/terence-allbright-two-pierrot-songs/"
+	},
+	{
+		"id": "10",
+		"title": "A Song",
+		"year": "2008",
+		"instruments": ["SATB choir", "Organ", "Trumpet in B-flat"],
+		"description": "Words by Richard Crashaw. Composed for the Petworth Festival Service 2008, and first performed on June 5th 2008 by the Petworth Festival Service Choir with Iona Harrison trumpet and Sarah Barstow organ, directed by Matthew Cooke.",
+		"link": "https://composersedition.com/terence-allbright-a-song/"
+	},
+	{
+		"id": "11",
+		"title": "Partita",
+		"year": "2008",
+		"instruments": ["Flute", "Piano"],
+		"description": "Commissioned by Helen Tudor. The first performance was given by Helen Tudor flute and Matthew Cooke piano on 4th September 2008 in the Chapel of the Ascension, Bishop Otter Campus, University of Chichester.",
+		"link": "https://composersedition.com/terence-allbright-partita/"
+	},
+	{
+		"id": "12",
+		"title": "...isms",
+		"year": "2010",
+		"instruments": ["Piano"],
+		"description": "First performed by Adam Swayne on January 20th 2011 at the Friends' Meeting House, Brighton, in a recital presented by New Music Brighton.",
+		"link": "https://composersedition.com/terence-allbright-isms/"
+	},
+	{
+		"id": "13",
+		"title": "Grave & Harmonious Music",
+		"year": "2011 - 2012",
+		"instruments": ["String orchestra"],
+		"description": "Commissioned by Music on Sundays for Chichester String Ensemble, with financial assistance from individual members of Music On Sundays, Chichester City Council and the RVW Trust. The first performance was given by Chichester String Ensemble conducted by Louis Halsey, on 1st July 2012 at Christ Church, Chichester.",
+		"link": "https://composersedition.com/terence-allbright-grave-and-harmonious-music/"
+	},
+	{
+		"id": "14",
+		"title": "Piano Trio No. 1",
+		"year": "2013",
+		"instruments": ["Violin", "Cello", "Piano"],
+		"description": "Opening with a poised fanfare which dives straight into a turbulent second movement before providing respite with a muted string chorale and a moment of lyricism from each voice to conclude, Terence Allbright's Piano Trio No. 1 provides satisfying balance both in temperament and ensemble for the enjoyment of audiences and players alike.",
+		"link": "https://composersedition.com/terence-allbright-piano-trio-no-1/"
+	},
+	{
+		"id": "15",
+		"title": "Piano Trio No. 2",
+		"year": "2015",
+		"instruments": ["Violin", "Cello", "Piano"],
+		"description": "Juxtaposing darkness and light through sombre, polyphonic utterances which fall away to reveal glinting mosaics of bright, flurrying fragments, Terence Allbright's Piano Trio No. 2 artfully embraces the contrasts in sonority afforded by the piano trio to create vivid, fluctuating moods.",
+		"link": "https://composersedition.com/terence-allbright-piano-trio-no-2/"
+	},
+	{
+		"id": "16",
+		"title": "Sonata",
+		"year": "2016 - 2017",
+		"instruments": ["Trumpet", "Piano"],
+		"description": "First performed by Fraser Tannock with Terence Allbright at a recital promoted by New Music Brighton on 21st September 2017, at the Friends' Meeting House, Brighton.",
+		"link": "https://composersedition.com/terence-allbright-sonata/"
+	},
+	{
+		"id": "17",
+		"title": "manga",
+		"year": "2017",
+		"instruments": ["Bass clarinet", "Piano"],
+		"description": "For Henry Melbourne & Ben Socrates, who gave the first performance on 15th February 2020 in the Chapel of the Ascension, University of Chichester. I drew my title from Hokusai's sketches - called manga by him - which show the same human figure performing many different actions.",
+		"link": "https://composersedition.com/terence-allbright-manga/"
+	},
+	{
+		"id": "18",
+		"title": "Wondrous Machine",
+		"year": "2017 - 2020",
+		"instruments": ["Organ"],
+		"description": "Timothy Ravalde gave the ﬁrst performance of Toccata 1 on 17th October 2018 at St Mary's Church, Petworth. I have lifted the title of this collection from Hail! Bright Cecilia - Nicholas Brady's text for Henry Purcell's Ode to St Cecilia.",
+		"link": "https://composersedition.com/terence-allbright-wondrous-machine/"
+	},
+	{
+		"id": "19",
+		"title": "Snapshots",
+		"year": "2018",
+		"instruments": ["Ensemble"],
+		"description": "1. Trio; 2. A Wave on Dover Beach; 3. Soft Voices; 4. Secret Ministry; 5. Trio; 6. William's Lonely Cloud; 7. No Sarabande.",
+		"link": "https://composersedition.com/terence-allbright-snapshots/"
+	},
+	{
+		"id": "20",
+		"title": "Narratives & Rituals",
+		"year": "2018 - 2019",
+		"instruments": ["Violin", "Cello", "Piano", "Percussion"],
+		"description": "Enlarging the sound world of the piano trio with an array of percussion including sandpaper-wrapped fingers and a steel drum with 'hexbugs', Narratives and Rituals is a playfully crafted collection of moods portrayed through vivid sonic atmospheres, gregarious dialogues and a gratifying handling of pace.",
+		"link": "https://composersedition.com/terence-allbright-narratives-rituals/"
+	},
+	{
+		"id": "21",
+		"title": "Kudos",
+		"year": "2021",
+		"instruments": ["Two trumpets"],
+		"description": "Reading Rachel Cusk's novel Kudos I was struck by a character pointing out that kudos can be misappropriated. I realised how much more complex a concept it is than glory - its usual translation. I had been wanting to write a piece for my friend Fraser Tannock, and both words inevitably made me think of trumpets. After their opening squabble the two instruments diverge far apart, so that in the third section they struggle to communicate; things improve in time for the final passage and the race to the finish.",
+		"link": "https://composersedition.com/terence-allbright-kudos/"
+	},
+	{
+		"id": "22",
+		"title": "Two Interludes",
+		"year": "2021",
+		"instruments": ["Flute", "Viola", "Piano"],
+		"description": "In Interlude 1 (composed in 2018) each instrument describes its own trajectory across the space. A mosaic of melodic fragments on the flute is accompanied by the viola's continuously ticking rhythm and the piano's flowing arabesques. Interlude 2 (2021) begins like a Baroque trio sonata with duetting counterpoint, an independent bass, and with chords at the centre of the texture; then the music fades away in a calm passage of wide harmonies sustained by trills. Interlude No 2 was first performed by The Duruflé Trio - Rosie Bowker flute, Henrietta Hill viola and Clare Simmonds piano - at a New Music Brighton concert on 17th June 2018 at St Luke's Church, Brighton.",
+		"link": "https://composersedition.com/terence-allbright-two-interludes/"
+	},
+	{
+		"id": "23",
+		"title": "Two Pieces",
+		"year": "2021",
+		"instruments": ["Piano"],
+		"description": "These two pieces were conceived as a pair, and composed in December 2020 and January 2021. They can be played in either order: one has two similarly jaunty - but ultimately serious - themes in a simple ternary form, and the other has two very different kinds of music performed at the same time.",
+		"link": "https://composersedition.com/terence-allbright-two-pieces-for-piano/"
+	},
+	{
+		"id": "24",
+		"title": "Elemental",
+		"year": "2021 - 2023",
+		"instruments": ["Bass clarinet", "Cello", "Piano"],
+		"description": "The four sections of this single-movement trio are shaped by the ancient notion of four elements - here in the order fire, water, earth and air. In the first section the clarinet leads the way from flickering to conflagration, and in the second the cello is in charge with a torrent of triplets. The instruments are more equally matched in the third where I imagine both the destructive forces and the fruitfulness of earth, and in the final part the rapid airy motion is lightly held together by a series of harmonies.",
+		"link": "https://composersedition.com/terence-allbright-elemental/"
+	},
+	{
+		"id": "25",
+		"title": "Genealogy",
+		"year": "2022",
+		"instruments": ["Flute", "Clarinet", "Piano"],
+		"description": "This short trio outlines a basic family history of the motherly Greek Goddess Leto. Child of the Titans Phoebe (the moon) and Coeus (intellect), Leto was seduced by Zeus and gave birth to Artemis and Apollo - both associated with hunting and music. Genealogy was composed for a concert promoted by New Music Brighton at St Luke's Church in Brighton on 18th November 2022, when Leto Ensemble gave its first performance. Klio Blonz (flute), Shelley Levy (clarinet) & Jane Beament (piano).",
+		"link": "https://composersedition.com/terence-allbright-genealogy/"
+	},
+	{
+		"id": "26",
+		"title": "Nine Short Pieces",
+		"year": "2022",
+		"instruments": ["Piano"],
+		"description": "1. Preamble; 2. Fugato; 3. Etcetera; 4. Barcarolle; 5. Bling; 6. 2:3:4; 7. Coup de Grâce; 8. Innere Stimme; 9. In extremis.",
+		"link": "https://composersedition.com/terence-allbright-nine-short-pieces-for-piano/"
+	},
+	{
+		"id": "27",
+		"title": "Six Pieces",
+		"year": "2024 - 2025",
+		"instruments": ["Piano"],
+		"description": "1. Leggiero; 2. Lontano; 3. Ansioso; 4. Oscuro; 5. Tranquillo; 6. Feroce.",
+		"link": "https://composersedition.com/terence-allbright-six-pieces-for-piano/"
+	}
+]

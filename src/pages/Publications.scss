@@ -1,0 +1,14 @@
+@use "/src/scss/util/" as u;
+
+.publications {
+	&__publications {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(16);
+
+		@include u.breakpoint(medium) {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(u.rem(400), 1fr));
+		}
+	}
+}
