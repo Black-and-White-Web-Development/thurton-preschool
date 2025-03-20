@@ -9,9 +9,10 @@ const Footer = function () {
 	return (
 		<footer className="footer fb-col-wrapper">
 			<div className="footer__copyright-wrapper">
-				<h3 className="footer__copyright-heading">Terence Allbright Composer</h3>
+				<h3 className="footer__copyright-heading">Thurton & Ashby St Mary Preschool</h3>
 				<p className="footer__copyright-text">
-					Copyright © {new Date().getFullYear()} Terence Allbright. All rights reserved.
+					Copyright © 1994 - {new Date().getFullYear()} Thurton & Ashby St Mary Preschool. All
+					rights reserved.
 				</p>
 			</div>
 			<div className="footer__content-wrapper">

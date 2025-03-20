@@ -24,12 +24,12 @@ function App() {
 		{
 			path: "/terms-of-use",
 			label: "Terms of use",
-			page: <TermsOfUse siteName="Terence Allbright Composer" />,
+			page: <TermsOfUse siteName="Thurton & Ashby St Mary Preschool" />,
 		},
 		{
 			path: "/privacy-policy",
 			label: "Privacy policy",
-			page: <PrivacyPolicy siteName="Terence Allbright Composer" />,
+			page: <PrivacyPolicy siteName="Thurton & Ashby St Mary Preschool" />,
 		},
 		{ path: "/cookies", label: "Cookie policy", page: <CookiePolicy /> },
 		{ path: "/accessibility", label: "Accessibility", page: <Accessibility /> },

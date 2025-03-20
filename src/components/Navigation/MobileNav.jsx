@@ -21,7 +21,7 @@ const MobileNav = function ({ routes }) {
 			>
 				<header className="nav__header">
 					<Link className="nav__home-link" to="/">
-						Terence Allbright
+						Thurton & Ashby St Mary Preschool
 					</Link>
 					<button
 						className="menu-button nav__button"

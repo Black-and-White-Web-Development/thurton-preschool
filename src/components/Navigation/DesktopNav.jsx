@@ -7,7 +7,7 @@ const DesktopNav = function ({ routes }) {
 		<header className="fb-col-wrapper nav__wrapper">
 			<nav className="nav nav--desktop" role="navigation" aria-label="Main Navigation">
 				<Link className="nav__home-link" to="/">
-					Terence Allbright
+					Thurton & Ashby St Mary Preschool
 				</Link>
 				<ul className="nav__links">
 					{routes.map(({ path, label }) => (
