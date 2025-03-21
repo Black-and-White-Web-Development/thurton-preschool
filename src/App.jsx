@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "/src/components/Navigation/Navigation";
 import Home from "/src/pages/Home";
 import About from "/src/pages/About";
-import Publications from "/src/pages/Publications";
-import Media from "/src/pages/Media";
+import Resources from "/src/pages/Resources";
+import Fundraising from "/src/pages/Fundraising";
 import Contact from "/src/pages/Contact";
 import TermsOfUse from "/src/pages/legal/TermsOfUse";
 import PrivacyPolicy from "/src/pages/legal/PrivacyPolicy";
@@ -15,8 +15,8 @@ function App() {
 	const mainRoutes = [
 		{ path: "/", label: "Home", page: <Home /> },
 		{ path: "/about", label: "About", page: <About /> },
-		{ path: "/publications", label: "Publications", page: <Publications /> },
-		{ path: "/media", label: "Media", page: <Media /> },
+		{ path: "/resources", label: "Resources", page: <Resources /> },
+		{ path: "/fundraising", label: "Fundraising", page: <Fundraising /> },
 		{ path: "/contact", label: "Contact", page: <Contact /> },
 	];
 

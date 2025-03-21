@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Publication from "../components/Publication/Publication";
 import pubsData from "/src/data/publications.json";
-import "./Publications.scss";
+import "./Resources.scss";
 
-const Publications = function () {
+const Resources = function () {
 	const [sortType, setSortType] = useState("year-desc");
 
 	const extractYear = yearStr => {
@@ -50,4 +50,4 @@ const Publications = function () {
 	);
 };
 
-export default Publications;
+export default Resources;

@@ -1,9 +1,9 @@
 import DescriptionList from "../components/DescriptionList/DescriptionList";
 import List from "../components/List/List";
 import Video from "/src/components/Video/Video";
-import "./Media.scss";
+import "./Fundraising.scss";
 
-const Media = function () {
+const Fundraising = function () {
 	return (
 		<>
 			<section className="media fb-col-wrapper">
@@ -115,4 +115,4 @@ const Media = function () {
 	);
 };
 
-export default Media;
+export default Fundraising;
