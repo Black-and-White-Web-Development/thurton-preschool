@@ -2,9 +2,9 @@
 
 :root {
 	--sans-serif: "Poppins", sans-serif;
-	--serif: "Playfair Display", serif;
+	--script: "Amatic SC", serif;
 
-	font-family: var(--serif);
+	font-family: var(--script);
 	font-style: normal;
 	font-weight: 400;
 	font-optical-sizing: auto;
@@ -22,7 +22,7 @@ body {
 
 h1 {
 	margin-block-end: u.rem(32);
-	font-family: var(--serif);
+	font-family: var(--script);
 	font-size: u.rem(40);
 	font-size: clamp(u.rem(40), 1.7rem + 4.1vw, u.rem(72));
 	font-weight: 700;
@@ -34,7 +34,7 @@ h1 {
 
 h2 {
 	margin-block-end: u.rem(16);
-	font-family: var(--serif);
+	font-family: var(--script);
 	font-size: u.rem(24);
 	font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
 	// font-weight: 400;
@@ -45,7 +45,7 @@ h2 {
 }
 
 h3 {
-	font-family: var(--serif);
+	font-family: var(--sans-serif);
 	font-size: u.rem(20);
 	font-size: clamp(u.rem(20), 1.15rem + 0.51vw, u.rem(24));
 	font-weight: 700;
@@ -83,5 +83,5 @@ dd {
 p,
 span,
 li {
-	font-family: var(--serif);
+	font-family: var(--sans-serif);
 }
