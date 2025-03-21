@@ -31,7 +31,7 @@ main {
 	flex: 1;
 }
 
-section {
+section:not(:first-of-type) {
 	padding-block: u.rem(48);
 }
 

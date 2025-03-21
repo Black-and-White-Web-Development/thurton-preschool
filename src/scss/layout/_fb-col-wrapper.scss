@@ -11,7 +11,7 @@
 		repeat(
 			var(--col-count),
 			calc(
-				(min(100% - var(--space-lr), 60rem) - (var(--col-count) - 1) * var(--space-gap)) /
+				(min(100% - var(--space-lr), 70rem) - (var(--col-count) - 1) * var(--space-gap)) /
 					var(--col-count)
 			)
 		)
