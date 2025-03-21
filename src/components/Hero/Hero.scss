@@ -3,82 +3,83 @@
 .hero {
 	--navigation-height: 80px;
 
-	padding-block: 0;
-
-	&__image-container {
-		--cover-image: url("/src/assets/images/terence-allbright-01-mobile.jpg");
-
-		min-height: min(50vh, 400px);
-		background-image: var(--cover-image);
-		background-position: center 25%;
-		background-repeat: no-repeat;
-		background-size: cover;
-
-		@include u.breakpoint(medium) {
-			--cover-image: url("/src/assets/images/terence-allbright-01.jpg");
-			--clip-path: polygon(10% 100%, 100% 100%, 100% 0, 0 0);
-
-			-webkit-clip-path: var(--clip-path);
-			clip-path: var(--clip-path);
-		}
-
-		@include u.breakpoint(large) {
-			min-height: 800px;
-		}
-	}
+	position: relative;
+	padding-block: var(--navigation-height);
 
 	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		box-sizing: border-box;
+		align-content: center;
 		gap: u.rem(32);
-
 		padding-block: 32px;
 
 		@include u.breakpoint(medium) {
-			min-height: 60vh;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+
+			& > * {
+				max-width: 70%;
+				color: white !important;
+				text-shadow: 0 0 8px hsl(0, 0%, 0%, 0.5);
+			}
 		}
 	}
 
 	&__heading {
 		margin-block-end: 0;
-		font-weight: 400;
-		text-transform: uppercase;
+		font-size: clamp(u.rem(40), 1.7rem + 4.1vw, u.rem(72));
+		text-wrap: pretty;
+	}
 
-		& .emphasis {
-			display: block;
-			margin-block-start: u.rem(20);
-			border-top: solid 3px var(--heading-secondary);
-			padding-top: u.rem(8);
-
-			color: var(--heading-secondary);
-
-			font-weight: 700;
-		}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(16);
 	}
 
 	&__subheading {
 		font-size: u.rem(20);
 		font-size: clamp(u.rem(20), 1.15rem + 0.51vw, u.rem(24));
+		font-weight: 300;
 		line-height: 1.2;
 	}
 
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(16);
+	}
+
 	&__cta {
-		padding: u.rem(12) u.rem(32);
-		border: solid 3px var(--cl-primary);
-		border-radius: var(--br-light);
+		display: flex;
+		align-items: center;
+
+		max-width: fit-content;
 
 		font-family: var(--sans-serif);
 		font-size: u.rem(16);
 		font-size: clamp(u.rem(16), 0.5625rem + 1vw, u.rem(20));
-		font-weight: 600;
+		font-weight: 700;
+		text-transform: uppercase;
 		letter-spacing: 1px;
 
-		color: var(--background-primary);
-		background-color: var(--cl-primary);
+		color: white;
 
-		transition-property: color, background-color;
 		transition-duration: 800ms;
+
+		&::before {
+			content: "";
+			margin-inline-end: 1ch;
+			height: 8px;
+			width: 8px;
+			border: solid 2.5px white;
+			border-radius: 50%;
+			background-color: transparent;
+
+			transition-property: background-color;
+			transition-duration: 800ms;
+		}
 
 		&::after {
 			content: "➞";
@@ -90,13 +91,16 @@
 		}
 
 		&:hover {
-			color: var(--cl-primary);
-			background-color: var(--background-primary-shade);
 			transition-duration: 200ms;
 
-			&::after {
+			&::before {
+				background-color: white;
 				transition-duration: 200ms;
+			}
+
+			&::after {
 				transform: translateX(50%);
+				transition-duration: 200ms;
 			}
 		}
 
