@@ -1,23 +1,60 @@
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
-import YoutubeEmbed from "/src/components/YoutubeEmbed/YoutubeEmbed.jsx";
 import "./Video.scss";
 
-const Video = function ({ title, embedId, children }) {
+const Video = function ({ src }) {
+	const [isMuted, setIsMuted] = useState(true);
+	const [isPlaying, setIsPlaying] = useState(true);
+	const videoRef = useRef(null);
+
+	const toggleMute = () => {
+		setIsMuted(!isMuted);
+		if (videoRef.current) {
+			videoRef.current.muted = !isMuted;
+		}
+	};
+
+	const togglePlayPause = () => {
+		if (videoRef.current) {
+			if (videoRef.current.paused) {
+				videoRef.current.play();
+				setIsPlaying(true);
+			} else {
+				videoRef.current.pause();
+				setIsPlaying(false);
+			}
+		}
+	};
+
 	return (
-		<article className="media__item video">
-			<header className="video__header">
-				<h2>{title}</h2>
-			</header>
-			<YoutubeEmbed embedId={embedId} />
-			<div className="video__description">{children}</div>
-		</article>
+		<figure className="video">
+			<video
+				ref={videoRef}
+				className="video__player"
+				width="100%"
+				height="auto"
+				autoPlay
+				loop
+				muted={isMuted}
+			>
+				<source src={src} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
+			<figcaption className="video__controls">
+				<button className="video__control" onClick={toggleMute}>
+					{isMuted ? "Unmute" : "Mute"}
+				</button>
+				<button className="video__control" onClick={togglePlayPause}>
+					{isPlaying ? "Pause" : "Play"}
+				</button>
+			</figcaption>
+		</figure>
 	);
 };
 
 Video.propTypes = {
-	title: PropTypes.string.isRequired,
-	embedId: PropTypes.string.isRequired,
-	children: PropTypes.node,
+	src: PropTypes.string.isRequired,
 };
 
 export default Video;
