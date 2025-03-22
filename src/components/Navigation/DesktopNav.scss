@@ -1,16 +1,25 @@
 @use "/src/scss/util/" as u;
 
 .nav__wrapper {
-	position: fixed;
+	position: absolute;
+	top: 0;
 	z-index: 2;
 	width: 100vw;
 
-	background-color: var(--cl-primary-shade);
+	background-image: linear-gradient(hsl(0, 0%, 0%, 0.2) 30%, transparent);
+	background-color: transparent;
 
-	& + * {
-		--nav-height: clamp(70px, 3.28125rem + 2.5vw, 80px);
+	@include u.breakpoint-down(medium) {
+		transition-property: background-color;
+		transition-duration: 400ms;
+		transition-delay: 300ms;
+		background-image: none;
 
-		padding-top: var(--nav-height);
+		&:has(.open) {
+			background-color: var(--cl-primary-shade);
+			transition-duration: 400ms;
+			transition-delay: 0ms;
+		}
 	}
 }
 
@@ -18,58 +27,56 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: u.rem(32);
 
 	padding: u.rem(16) 0;
 	background-color: var(--cl-background-primary);
+	background-color: transparent;
+
+	& > * {
+		flex: 1;
+	}
+
+	&__home-link {
+		max-width: fit-content;
+		opacity: 1;
+	}
+
+	&__logo {
+		--logo-size: clamp(96px, -5rem + 16vw, 128px);
+
+		height: var(--logo-size);
+		width: var(--logo-size);
+	}
 
 	&__links {
 		display: flex;
 		gap: u.rem(20);
 		padding: 0;
-	}
 
-	&__links li {
-		list-style: none;
-	}
-
-	&__home-link {
-		max-width: 10ch;
-
-		font-family: var(--serif);
-		font-size: u.rem(16);
-		font-size: clamp(u.rem(16), 0.7rem + 0.8vw, u.rem(20));
-		font-weight: 700;
-		line-height: 1.2;
-		text-wrap: wrap;
-		text-transform: uppercase;
-		letter-spacing: 0.05rem;
-		color: white;
-
-		opacity: 1;
-	}
-
-	&__link,
-	&__button {
-		font-family: var(--serif);
-		font-size: u.rem(16);
-		font-size: clamp(u.rem(16), 0.5rem + 1.33vw, u.rem(20));
-		font-weight: 500;
-		text-decoration: none;
-		text-wrap: nowrap;
-		color: white;
-
-		opacity: 0.6;
-		transition-property: opacity;
-		transition: 800ms;
-
-		&:hover {
-			opacity: 1;
-			transition: 400ms;
+		& li {
+			list-style: none;
 		}
 	}
 
 	&__link {
 		display: block;
+
+		font-family: var(--sans-serif);
+		font-size: u.rem(14);
+		font-size: clamp(u.rem(14), 0.25rem + 1vw, u.rem(16));
+		font-weight: 900;
+		color: white;
+
+		opacity: 0.6;
+		transition-property: opacity, color;
+		transition: 800ms;
+
+		&:hover {
+			opacity: 1;
+			color: var(--cl-primary-tint);
+			transition: 400ms;
+		}
 
 		&--active {
 			opacity: 1;
@@ -78,18 +85,33 @@
 		&::after {
 			content: "";
 			display: block;
-			border-bottom: solid 2px transparent;
+			border-bottom: solid 2.5px transparent;
 
 			transition-property: border-color;
 			transition: 800ms;
 		}
 
-		&:hover,
-		&--active {
+		&:hover {
 			&::after {
-				border-bottom: solid 2px white;
+				border-bottom: solid 2.5px var(--cl-primary);
 				transition: 400ms;
 			}
 		}
+		&--active {
+			&::after {
+				border-bottom: solid 2.5px white;
+				transition: 400ms;
+			}
+		}
+	}
+
+	&__social-links {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__social-icon {
+		width: 2ch;
+		height: 2ch;
 	}
 }

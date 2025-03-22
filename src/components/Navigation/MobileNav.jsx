@@ -4,6 +4,9 @@ import { useState } from "react";
 import "./MobileNav.scss";
 import "./DesktopNav.scss";
 
+import logo from "/src/assets/thurton-preschool-logo-light.svg";
+import facebook from "/src/assets/icons/facebook.svg";
+
 const MobileNav = function ({ routes }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,15 +23,11 @@ const MobileNav = function ({ routes }) {
 				aria-label="Main navigation"
 			>
 				<header className="nav__header">
-					<Link className="nav__home-link" to="/">
-						Thurton & Ashby St Mary Preschool
-					</Link>
 					<button
 						className="menu-button nav__button"
 						aria-label="Open navigation menu"
 						onClick={handleHamburger}
 					>
-						<span className="menu-button__label">Menu</span>
 						<svg
 							className={`menu-button__icon nav__icon ${isMenuOpen && "open"}`}
 							width="24px"
@@ -46,7 +45,18 @@ const MobileNav = function ({ routes }) {
 								</g>
 							)}
 						</svg>
+						<span className="menu-button__label">{isMenuOpen ? "Close" : "Menu"}</span>
 					</button>
+					<Link className="nav__home-link" to="/">
+						<img className="nav__logo" src={logo} alt="" />
+					</Link>
+					<ul className="nav__social-links">
+						<li className="nav__social-link">
+							<Link to="https://www.facebook.com/thurtonashbypreschool/" target="_blank">
+								<img src={facebook} alt="" width="32" height="32" className="nav__social-icon" />
+							</Link>
+						</li>
+					</ul>
 				</header>
 				<ul className={`nav__links ${isMenuOpen ? "open" : ""}`}>
 					{routes.map(({ path, label }) => (
