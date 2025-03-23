@@ -34,11 +34,12 @@ h1 {
 
 h2 {
 	margin-block-end: u.rem(16);
-	font-family: var(--script);
+	font-family: var(--sans-serif);
 	font-size: u.rem(24);
 	font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
-	// font-weight: 400;
+	font-weight: 700;
 	line-height: 1;
+	// text-transform: uppercase;
 	text-wrap: balance;
 	letter-spacing: -1px;
 	color: var(--cl-primary);
@@ -46,8 +47,8 @@ h2 {
 
 h3 {
 	font-family: var(--sans-serif);
-	font-size: u.rem(20);
-	font-size: clamp(u.rem(20), 1.15rem + 0.51vw, u.rem(24));
+	font-size: u.rem(32);
+	font-size: clamp(u.rem(32), 4.75rem + -4vw, u.rem(48));
 	font-weight: 700;
 	line-height: 1;
 

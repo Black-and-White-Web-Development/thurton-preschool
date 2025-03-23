@@ -1,7 +1,10 @@
 import { useState } from "react";
+import Hero from "../components/Hero/Hero";
 import Publication from "../components/Publication/Publication";
 import pubsData from "/src/data/publications.json";
 import "./Resources.scss";
+
+import coverImg from "/src/assets/images/resources.jpg";
 
 const Resources = function () {
 	const [sortType, setSortType] = useState("year-desc");
@@ -32,21 +35,24 @@ const Resources = function () {
 	));
 
 	return (
-		<section className="publications fb-col-wrapper">
-			<h1 className="publications__heading">Publications</h1>
-			<select
-				className="publications__sort"
-				value={sortType}
-				onChange={e => setSortType(e.target.value)}
-			>
-				<option value="year-asc">Chronological</option>
-				<option value="year-desc">Reverse chronological</option>
-				<option value="title-asc">Alphabetical</option>
-				<option value="title-desc">Reverse alphabetical</option>
-			</select>
+		<>
+			<Hero heading="Resources" coverImg={coverImg} />
+			<section className="publications fb-col-wrapper">
+				<h1 className="publications__heading">Publications</h1>
+				<select
+					className="publications__sort"
+					value={sortType}
+					onChange={e => setSortType(e.target.value)}
+				>
+					<option value="year-asc">Chronological</option>
+					<option value="year-desc">Reverse chronological</option>
+					<option value="title-asc">Alphabetical</option>
+					<option value="title-desc">Reverse alphabetical</option>
+				</select>
 
-			<div className="publications__publications">{pubsElements}</div>
-		</section>
+				<div className="publications__publications">{pubsElements}</div>
+			</section>
+		</>
 	);
 };
 

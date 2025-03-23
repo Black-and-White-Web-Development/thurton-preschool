@@ -1,11 +1,15 @@
 import DescriptionList from "../components/DescriptionList/DescriptionList";
+import Hero from "../components/Hero/Hero";
 import List from "../components/List/List";
 import Video from "/src/components/Video/Video";
 import "./Fundraising.scss";
 
+import coverImg from "/src/assets/images/fundraising.jpg";
+
 const Fundraising = function () {
 	return (
 		<>
+			<Hero heading="Fundraising" coverImg={coverImg} />
 			<section className="media fb-col-wrapper">
 				<h1>Media</h1>
 				<div className="media__items">
