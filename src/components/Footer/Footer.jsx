@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.scss";
 
-import YouTubeIcon from "/src/assets/icons/youtube.svg";
-import LinkedInIcon from "/src/assets/icons/linkedin.svg";
-import ComposersEditionIcon from "/src/assets/icons/composers-edition.svg";
-
 const Footer = function () {
 	return (
 		<footer className="footer fb-col-wrapper">
@@ -12,7 +8,7 @@ const Footer = function () {
 				<h3 className="footer__copyright-heading">Thurton & Ashby St Mary Preschool</h3>
 				<p className="footer__copyright-text">
 					Copyright © 1994 - {new Date().getFullYear()} Thurton & Ashby St Mary Preschool. All
-					rights reserved.
+					rights reserved. Registered Charity Number 1036204.
 				</p>
 			</div>
 			<div className="footer__content-wrapper">
@@ -24,11 +20,11 @@ const Footer = function () {
 					<NavLink to="/about" className="footer__link">
 						About
 					</NavLink>
-					<NavLink to="/publications" className="footer__link">
-						Publications
+					<NavLink to="/resources" className="footer__link">
+						Resources
 					</NavLink>
-					<NavLink to="/media" className="footer__link">
-						Media
+					<NavLink to="/fundraising" className="footer__link">
+						Fundraising
 					</NavLink>
 					<NavLink to="/contact" className="footer__link">
 						Contact
@@ -50,37 +46,89 @@ const Footer = function () {
 					</NavLink>
 				</div>
 				<div className="footer__links">
-					<h3 className="footer__links-heading">Social</h3>
-					<a
-						href="https://composersedition.com/terenceallbright/"
+					<h3 className="footer__links-heading">Policies</h3>
+					<NavLink
 						target="_blank"
-						className="footer__link footer__link--social"
+						to="/src/assets/docs/safeguarding-policy.pdf"
+						className="footer__link"
 					>
-						<img
-							src={ComposersEditionIcon}
-							alt=""
-							width="32"
-							height="32"
-							className="footer__link-icon"
-						/>
-						Composer&apos;s Edition
-					</a>
-					<a
-						href="https://www.youtube.com/@terenceallbright1900"
+						Safeguarding
+					</NavLink>
+					<NavLink
 						target="_blank"
-						className="footer__link footer__link--social"
+						to="/src/assets/docs/online-safety-policy.pdf"
+						className="footer__link"
 					>
-						<img src={YouTubeIcon} alt="" width="32" height="32" className="footer__link-icon" />
-						YouTube
-					</a>
-					<a
-						href="https://www.linkedin.com/in/terence-allbright-0a797272/"
+						Online Safety
+					</NavLink>
+					<NavLink
 						target="_blank"
-						className="footer__link footer__link--social"
+						to="/src/assets/docs/first-aid-policy.pdf"
+						className="footer__link"
 					>
-						<img src={LinkedInIcon} alt="" width="32" height="32" className="footer__link-icon" />
-						LinkedIn
-					</a>
+						First Aid
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="/src/assets/docs/promoting-positive-behaviour-policy.pdf"
+						className="footer__link"
+					>
+						Promoting Positive Behaviour
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="/src/assets/docs/staffing-policy.pdf"
+						className="footer__link"
+					>
+						Staffing
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="/src/assets/docs/admissions-and-charging-policy.pdf"
+						className="footer__link"
+					>
+						Admissions and Charging
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="/src/assets/docs/making-a-complaint-policy.pdf"
+						className="footer__link"
+					>
+						Making a Complaint
+					</NavLink>
+				</div>
+				<div className="footer__links">
+					<h3 className="footer__links-heading">Useful links</h3>
+					<NavLink target="_blank" to="/https://thurton.norfolk.sch.uk" className="footer__link">
+						Thurton Church of England VC Primary School
+					</NavLink>
+					<NavLink target="_blank" to="https://foundationyears.org.uk" className="footer__link">
+						Early Years Foundation Stage
+					</NavLink>
+					<NavLink target="_blank" to="https://www.eyalliance.org.uk" className="footer__link">
+						Early Years Alliance
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="https://www.gov.uk/early-years-foundation-stage"
+						className="footer__link"
+					>
+						Department For Education | Early Years
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="https://www.nhs.uk/common-health-questions/childrens-health/ "
+						className="footer__link"
+					>
+						NHS Childrens Health
+					</NavLink>
+					<NavLink
+						target="_blank"
+						to="https://www.gov.uk/government/organisations/ofsted"
+						className="footer__link"
+					>
+						Ofsted
+					</NavLink>
 				</div>
 			</div>
 		</footer>
