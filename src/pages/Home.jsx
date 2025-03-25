@@ -1,4 +1,5 @@
 import HeroHome from "/src/components/HeroHome/HeroHome";
+import Testimonials from "../components/Testimonials/Testimonials";
 
 const Home = function () {
 	return (
@@ -22,9 +23,7 @@ const Home = function () {
 					where they get opportunities to explore, enjoy and thrive!
 				</p>
 			</section>
-			<section className="fb-col-wrapper">
-				<h2>What our families say about us</h2>
-			</section>
+			<Testimonials />
 		</>
 	);
 };

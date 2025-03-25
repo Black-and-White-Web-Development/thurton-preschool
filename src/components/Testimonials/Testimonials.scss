@@ -1,0 +1,21 @@
+@use "/src/scss/util/" as u;
+
+.testimonials {
+	background-color: var(--background-secondary-tint);
+
+	&__wrapper {
+		display: flex;
+		gap: u.rem(32);
+		overflow-y: hidden;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		scrollbar-width: none; /* Firefox */
+
+		& > * {
+			flex-shrink: 0;
+		}
+	}
+}
