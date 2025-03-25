@@ -21,9 +21,9 @@
 		calc(var(--cl-primary-lightness) * var(--cl-shade-multiplier))
 	);
 
-	--cl-secondary-hue: 25;
-	--cl-secondary-saturation: 40%;
-	--cl-secondary-lightness: 65%;
+	--cl-secondary-hue: 40;
+	--cl-secondary-saturation: 70%;
+	--cl-secondary-lightness: 50%;
 	--cl-secondary: hsl(
 		var(--cl-secondary-hue),
 		var(--cl-secondary-saturation),
@@ -38,6 +38,25 @@
 		var(--cl-secondary-hue),
 		var(--cl-secondary-saturation),
 		calc(var(--cl-secondary-lightness) * var(--cl-shade-multiplier))
+	);
+
+	--cl-tertiary-hue: 310;
+	--cl-tertiary-saturation: 80%;
+	--cl-tertiary-lightness: 50%;
+	--cl-tertiary: hsl(
+		var(--cl-tertiary-hue),
+		var(--cl-tertiary-saturation),
+		var(--cl-tertiary-lightness)
+	);
+	--cl-tertiary-tint: hsl(
+		var(--cl-tertiary-hue),
+		var(--cl-tertiary-saturation),
+		calc(var(--cl-tertiary-lightness) * var(--cl-tint-multiplier))
+	);
+	--cl-tertiary-shade: hsl(
+		var(--cl-tertiary-hue),
+		var(--cl-tertiary-saturation),
+		calc(var(--cl-tertiary-lightness) * var(--cl-shade-multiplier))
 	);
 
 	--cl-success-hue: 140;

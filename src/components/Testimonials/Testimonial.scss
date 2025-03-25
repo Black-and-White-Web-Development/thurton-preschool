@@ -1,0 +1,24 @@
+@use "/src/scss/util/" as u;
+
+.testimonial {
+	position: relative;
+
+	border: solid 2px var(--background-secondary-shade);
+	padding: u.rem(32);
+	max-width: 30ch;
+
+	background-color: var(--background-primary);
+	border-radius: var(--br-mid);
+
+	&__icon {
+		display: block;
+		margin: 0 auto;
+		margin-block-end: u.rem(16);
+		fill: var(--cl-secondary);
+	}
+
+	&__body {
+		font-style: italic;
+		line-height: 1.5;
+	}
+}
