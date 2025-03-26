@@ -1,0 +1,19 @@
+@use "/src/scss/util" as u;
+
+.team-members {
+	background-color: var(--background-secondary-tint);
+
+	&__description {
+		margin-block-end: u.rem(32);
+	}
+
+	&__list {
+		display: grid;
+		gap: u.rem(32);
+		grid-template-columns: 100%;
+
+		@include u.breakpoint(large) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}

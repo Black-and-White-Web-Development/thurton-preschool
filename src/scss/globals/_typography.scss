@@ -48,8 +48,8 @@ h2 {
 
 h3 {
 	font-family: var(--sans-serif);
-	font-size: u.rem(32);
-	font-size: clamp(u.rem(32), 4.75rem + -4vw, u.rem(48));
+	font-size: u.rem(24);
+	font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
 	font-weight: 700;
 	line-height: 1;
 
