@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./MobileNav.scss";
 import "./DesktopNav.scss";
 
-import logo from "/src/assets/thurton-preschool-logo-light.svg";
+import logo from "/src/assets/logo/thurton-preschool-logo-light.svg";
 import facebook from "/src/assets/icons/facebook.svg";
 
 const MobileNav = function ({ routes }) {

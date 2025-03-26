@@ -1,4 +1,4 @@
-import Hero from "../components/Hero/Hero";
+import Hero from "../../partials/Hero/Hero";
 import "./Resources.scss";
 
 import coverImg from "/src/assets/images/resources.jpg";

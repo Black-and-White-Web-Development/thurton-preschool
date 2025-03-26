@@ -1,5 +1,5 @@
-import HeroHome from "/src/components/HeroHome/HeroHome";
-import Testimonials from "../components/Testimonials/Testimonials";
+import HeroHome from "./HeroHome/HeroHome";
+import Testimonials from "./Testimonials/Testimonials";
 
 const Home = function () {
 	return (

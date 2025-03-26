@@ -1,4 +1,4 @@
-import Hero from "../../components/Hero/Hero";
+import Hero from "../../partials/Hero/Hero";
 import TeamMembers from "./TeamMembers/TeamMembers";
 import Committee from "./Committee/Committee";
 import "./About.scss";

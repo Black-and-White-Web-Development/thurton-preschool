@@ -1,5 +1,5 @@
-import ContactForm from "/src/components/ContactForm/ContactForm.jsx";
-import Hero from "../components/Hero/Hero";
+import ContactForm from "./ContactForm/ContactForm";
+import Hero from "../../partials/Hero/Hero";
 import "./Contact.scss";
 
 import coverImg from "/src/assets/images/contact.jpg";

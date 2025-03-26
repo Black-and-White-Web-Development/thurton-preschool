@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./TeamMember.scss";
 
-import logo from "/src/assets/thurton-preschool-logo.jpg";
+import logo from "/src/assets/logo/thurton-preschool-logo.jpg";
 
 const TeamMember = function ({ teamMember }) {
 	return (
