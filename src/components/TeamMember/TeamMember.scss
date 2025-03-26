@@ -1,0 +1,83 @@
+@use "/src/scss/util" as u;
+
+.team-member {
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+	gap: u.rem(32);
+
+	padding: u.rem(32);
+	height: 100%;
+
+	background-color: var(--background-primary);
+	border-radius: var(--br-mid);
+
+	&__portrait-wrapper {
+		margin-block-end: u.rem(32);
+	}
+
+	&__header {
+		text-align: center;
+	}
+
+	&__heading {
+		margin-block-end: u.rem(8);
+	}
+
+	&__body {
+		@include u.breakpoint(large) {
+			height: clamp(14.375rem, 38.4375rem + -35vw, 18.75rem);
+			overflow: scroll;
+		}
+	}
+
+	&__role {
+		text-transform: uppercase;
+	}
+
+	&__subheading {
+		margin-block-end: u.rem(16);
+	}
+
+	&__portrait-image {
+		box-sizing: border-box;
+		margin: 0 auto;
+		border-radius: 50%;
+		width: u.rem(196);
+
+		&--placeholder {
+			border: solid 2px black;
+		}
+	}
+
+	&__qualifications-list {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(8);
+	}
+
+	&__qualification {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		border: solid 2px var(--background-primary-shade);
+		background-color: var(--background-primary-shade);
+		padding: u.rem(8);
+		border-radius: var(--br-light);
+	}
+
+	&__qualification-name {
+		font-size: u.rem(14);
+		font-size: clamp(u.rem(14), 0.65625rem + 0.5vw, u.rem(16));
+		text-wrap: balance;
+	}
+
+	&__qualification-year {
+		font-size: u.rem(14);
+		font-size: clamp(u.rem(14), 0.65625rem + 0.5vw, u.rem(16));
+		font-weight: 600;
+		color: var(--cl-primary);
+	}
+}
