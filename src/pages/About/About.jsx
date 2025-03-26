@@ -1,5 +1,6 @@
 import Hero from "../../components/Hero/Hero";
 import TeamMembers from "./TeamMembers/TeamMembers";
+import Committee from "./Committee/Committee";
 import "./About.scss";
 
 import coverImg from "/src/assets/images/about-us.jpg";
@@ -35,38 +36,7 @@ const About = function () {
 				</p>
 			</section>
 			<TeamMembers />
-			<section className="about fb-col-wrapper">
-				<h2>Our Committee</h2>
-				<p>
-					Our pre-school is run by a committee that is made up of parents and ex-staff members of
-					the pre-school. The committee and staff meet regularly throughout the year to help with
-					its smooth running and to organise fundraising events! If you are interested in joining or
-					finding out more about the committee then please contact an existing committee member or
-					our playleader, Ellen.
-				</p>
-				<dl>
-					<div>
-						<dt>Chair</dt>
-						<dd>Janet Reynolds</dd>
-					</div>
-					<div>
-						<dt>Treasurer</dt>
-						<dd>Sandra Rennie</dd>
-					</div>
-					<div>
-						<dt>Secretary</dt>
-						<dd>Amy Whittam</dd>
-					</div>
-					<div>
-						<dt>Finance Officer</dt>
-						<dd>Julie Lincoln</dd>
-					</div>
-					<div>
-						<dt>Other members</dt>
-						<dd>Michelle Stone</dd>
-					</div>
-				</dl>
-			</section>
+			<Committee />
 		</>
 	);
 };

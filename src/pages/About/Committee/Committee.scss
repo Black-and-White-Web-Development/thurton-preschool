@@ -1,0 +1,29 @@
+@use "/src/scss/util" as u;
+
+.committee {
+	&__description {
+		margin-block-end: u.rem(16);
+	}
+
+	&__members-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: u.rem(16);
+		margin-block-start: u.rem(32);
+	}
+
+	&__member {
+		flex: 1 0 auto;
+		padding: u.rem(16);
+		text-align: center;
+		background-color: var(--background-primary-shade);
+		border-radius: var(--br-mid);
+	}
+
+	&__role {
+		margin-block-end: u.rem(8);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--text-secondary);
+	}
+}
