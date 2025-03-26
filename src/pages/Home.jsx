@@ -6,6 +6,16 @@ const Home = function () {
 		<>
 			<HeroHome />
 			<section className="fb-col-wrapper">
+				<p>
+					We have spaces available for September 2025. Get in touch NOW to find out more:
+					info@thurtonpreschool.co.uk
+				</p>
+				<p>
+					We will also be offering woodland sessions on a Tuesday for all children and a Friday for
+					children who are three or over.
+				</p>
+				<p>Eligible 2-year-old funding accepted as well as 3/4-year-olds.</p>
+				<p></p>
 				<h2>Welcome to Thurton & Ashby St Mary Preschool</h2>
 				<p>
 					Thurton and Ashby St Mary Pre-school is a charity led setting based out of Thurton Village
