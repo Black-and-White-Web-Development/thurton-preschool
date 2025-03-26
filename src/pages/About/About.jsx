@@ -1,5 +1,5 @@
-import Hero from "../components/Hero/Hero";
-import TeamMembers from "../components/TeamMembers/TeamMembers";
+import Hero from "../../components/Hero/Hero";
+import TeamMembers from "./TeamMembers/TeamMembers";
 import "./About.scss";
 
 import coverImg from "/src/assets/images/about-us.jpg";
