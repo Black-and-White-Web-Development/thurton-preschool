@@ -7,7 +7,73 @@ const Fundraising = function () {
 	return (
 		<>
 			<Hero heading="Fundraising" coverImg={coverImg} />
-			<section className="fundraising fb-col-wrapper"></section>
+			<section className="fundraising fb-col-wrapper">
+				<h2>Upcoming events</h2>
+				<p>
+					The Preschool is a charity led organisation that holds fundraisers throughout the year to
+					keep it running. We have an elected committee who together with the staff organise and run
+					many different events. Please consider supporting us by volunteering or coming to our
+					events. Thank you.{" "}
+				</p>
+				<p>
+					We have several planned fundraising events for the rest of this year. They are as follows:{" "}
+				</p>
+				<div>
+					<h3>Ice Lolly Fridays</h3>
+					<p>
+						Grab a yummy after pre-school treat for just 50p on selected Fridays (dates will be
+						advertised in advance).
+					</p>
+				</div>
+				<div>
+					<h3>Autojumble and Classic Car Show</h3>
+					<p>
+						<strong>May 25th 2025</strong>
+					</p>
+					<p>
+						The biggest fundraiser of the year! A great day out for car fanatics big and small –
+						there’s something for everyone. If you wish to book in a car to show or book an
+						autojumble stall then please get in touch.
+					</p>
+					<p>
+						On the run up to the Autojumble we will be working in partnership with Thurton
+						Autocentre who are kindly offering to donate £2.50 to our pre-school for every customer
+						that registers with them. Please check out this link to find out more information or if
+						you are interested in getting work done. Thank you
+					</p>
+					<a href="https://www.thurtonautocentre.co.uk/blogs/post/helping-local-charity-raise-funds-for-pre-school">
+						Thurton Autocentre
+					</a>
+					<p>
+						We have also set up a direct gofundme link for the Autojumble here:{" "}
+						<a href="https://www.gofundme.com/f/thurton-autojumble-and-classic-car-show?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer">
+							Thurton Autojumble and Classic Car Show
+						</a>
+					</p>
+				</div>
+				<div>
+					<h3>Jumble Sale</h3>
+					<p>Jumble is appreciated and can be brought to the Village Hall from 9am.</p>
+				</div>
+			</section>
+			<section className="fb-col-wrapper">
+				<h2>Easyfundraising</h2>
+				<p>Please help support Thurton & Ashby St.Mary Preschool by shopping online.</p>
+				<p>
+					Use easyfundraising to shop with over 3,600 retailers including Amazon, Argos, John Lewis,
+					ASOS, Booking.com, eBay, Boden, and M&S.
+				</p>
+				<p>
+					Every time you shop, you’ll raise a free donation for Thurton & Ashby St.Mary Pre-School
+					every time, it’s that easy!{" "}
+				</p>
+				<p>
+					Find out more:{" "}
+					<a href="https://www.easyfundraising.org.uk/causes/tastmpresch/">
+						Fundraising | Easyfundraising
+					</a>
+				</p>
+			</section>
 		</>
 	);
 };
