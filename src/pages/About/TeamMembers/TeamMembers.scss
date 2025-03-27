@@ -1,7 +1,7 @@
 @use "/src/scss/util" as u;
 
 .team-members {
-	background-color: var(--background-secondary-tint);
+	background-color: var(--background-primary-shade);
 
 	&__description {
 		margin-block-end: u.rem(32);

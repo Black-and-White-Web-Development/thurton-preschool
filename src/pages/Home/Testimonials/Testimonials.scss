@@ -1,7 +1,7 @@
 @use "/src/scss/util/" as u;
 
 .testimonials {
-	background-color: var(--background-secondary-tint);
+	background-color: var(--background-primary-shade);
 
 	&__wrapper {
 		display: flex;

@@ -34,19 +34,18 @@ h1 {
 
 h2 {
 	margin-block-end: u.rem(32);
-	margin-block-end: clamp(u.rem(32), 0.25rem + 4vw, u.rem(48));
 	font-family: var(--sans-serif);
 	font-size: u.rem(32);
 	font-size: clamp(u.rem(32), 0.25rem + 4vw, u.rem(48));
-	font-weight: 300;
-	text-transform: uppercase;
+	font-weight: 700;
 	line-height: 1;
 	text-wrap: balance;
 	letter-spacing: -1px;
-	color: var(--cl-primary);
+	color: var(--cl-secondary);
 }
 
 h3 {
+	margin-block-end: u.rem(24);
 	font-family: var(--sans-serif);
 	font-size: u.rem(24);
 	font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
@@ -54,6 +53,14 @@ h3 {
 	line-height: 1;
 
 	color: var(--text-primary);
+}
+
+p {
+	max-width: 60ch;
+
+	&:not(:last-child) {
+		margin-block-end: u.rem(16);
+	}
 }
 
 p,
@@ -71,14 +78,15 @@ dd {
 	}
 
 	&.medium {
-		font-size: u.rem(20);
-		font-size: clamp(u.rem(20), 1.14rem + 0.49vw, u.rem(24));
+		margin-block-end: u.rem(32);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.5625rem + 1vw, u.rem(20));
+		font-weight: 500;
 	}
 
 	&.large {
-		margin-block-end: u.rem(40);
-		font-size: u.rem(24);
-		font-size: clamp(u.rem(24), 1.39rem + 0.48vw, u.rem(28));
+		font-size: u.rem(20);
+		font-size: clamp(u.rem(20), 1.14rem + 0.49vw, u.rem(24));
 	}
 }
 
