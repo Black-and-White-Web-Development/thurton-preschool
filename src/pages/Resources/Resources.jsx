@@ -1,4 +1,5 @@
 import Hero from "../../partials/Hero/Hero";
+import TermDates from "./TermDates/TermDates";
 import "./Resources.scss";
 
 import coverImg from "/src/assets/images/resources.jpg";
@@ -7,27 +8,7 @@ const Resources = function () {
 	return (
 		<>
 			<Hero heading="Resources" coverImg={coverImg} />
-			<section className="term-dates fb-col-wrapper">
-				<h2 className="term-dates__heading">Term Dates 2024-2025</h2>
-				<p className="term-dates__description medium">
-					Pre-school is open term time only and we follow Norfolk County Council&apos;s school term
-					dates and holidays.
-				</p>
-				<h3>Autumn term 2024</h3>
-				<p>Wednesday 4 September - Thursday 24 October 2024</p>
-				<p>Half-term holiday: Friday 25 October - Friday 1 November 2024</p>
-				<p>Monday 4 November - Friday 20 December 2024</p>
-				<p>Christmas holiday: Monday 23 December 2024 - Monday 6 January 2025</p>
-				<h3>Spring term 2025</h3>
-				<p>Tuesday 7 January - Friday 14 February 2025</p>
-				<p>Half-term holiday: Monday 17 - Friday 21 February 2025</p>
-				<p>Monday 24 February - Friday 4 April 2025</p>
-				<p>Easter holiday: Monday 7 - Tuesday 22 April 2025</p>
-				<h3>Summer term 2025</h3>
-				<p>Wednesday 23 April - Friday 23 May 2025 (Monday, 5 May is a Bank Holiday)</p>
-				<p>Half-term holiday: Monday 26 - Friday 30 May 2025</p>
-				<p>Monday 2 June - Tuesday 22 July 2025</p>
-			</section>
+			<TermDates />
 			<section className="fees fb-col-wrapper">
 				<h2>Fees and Grant Funding</h2>
 				<p>

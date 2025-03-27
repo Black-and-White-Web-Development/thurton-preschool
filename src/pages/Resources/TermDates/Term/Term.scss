@@ -1,0 +1,32 @@
+@use "/src/scss/util" as u;
+
+.term,
+.holiday {
+	padding: u.rem(32);
+	background-color: var(--background-primary-shade);
+	border-radius: var(--br-light);
+
+	&__heading {
+		font-size: u.rem(20);
+		font-size: clamp(u.rem(20), 1.14rem + 0.49vw, u.rem(24));
+		text-transform: uppercase;
+	}
+
+	&__span {
+		border-top: solid 2px var(--background-secondary-shade);
+		padding-block: u.rem(16);
+
+		&:last-child {
+			padding-block-end: 0;
+		}
+	}
+
+	&__name {
+		margin-block-end: u.rem(4);
+		font-size: u.rem(14);
+		font-size: clamp(u.rem(14), 0.65625rem + 0.5vw, u.rem(16));
+		font-weight: 800;
+		text-transform: uppercase;
+		color: var(--text-secondary);
+	}
+}

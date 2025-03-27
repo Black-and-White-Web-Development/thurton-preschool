@@ -1,0 +1,9 @@
+@use "/src/scss/util" as u;
+
+.term-dates {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(32);
+	}
+}
