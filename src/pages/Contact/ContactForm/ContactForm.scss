@@ -66,6 +66,9 @@
 		padding: 1rem;
 		width: min(60ch, 100%);
 
+		font-family: inherit;
+		font-size: inherit;
+
 		transition: border-color 600ms;
 	}
 
