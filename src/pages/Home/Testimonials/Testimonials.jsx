@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Testimonial from "./Testimonial";
+import Testimonial from "./Testimonial/Testimonial";
 import "./Testimonials.scss";
 
 const testimonials = [

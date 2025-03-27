@@ -1,4 +1,4 @@
-import TeamMember from "../TeamMember/TeamMember";
+import TeamMember from "./TeamMember/TeamMember";
 import "./TeamMembers.scss";
 
 import ellen from "/src/assets/images/staff/ellen-mussell.jpg";
