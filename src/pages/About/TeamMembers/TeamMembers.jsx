@@ -1,5 +1,5 @@
 import TeamMember from "../TeamMember/TeamMember";
-import "./teamMembers.scss";
+import "./TeamMembers.scss";
 
 import ellen from "/src/assets/images/staff/ellen-mussell.jpg";
 import kirsty from "/src/assets/images/staff/kirsty-collins.jpg";
