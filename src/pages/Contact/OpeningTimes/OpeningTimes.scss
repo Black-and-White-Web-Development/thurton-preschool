@@ -1,0 +1,40 @@
+@use "/src/scss/util" as u;
+
+.opening-times {
+	&__list {
+		margin-block-end: u.rem(32);
+		padding-inline: u.rem(16);
+		max-width: max(60ch, 300px);
+		background-color: var(--background-primary-shade);
+		border-radius: var(--br-light);
+	}
+
+	&__list-item {
+		display: grid;
+		grid-template-columns: repeat(2, 2fr);
+		gap: u.rem(8);
+		padding: u.rem(16);
+
+		&:not(:last-child) {
+			border-bottom: solid 2px var(--background-secondary-shade);
+		}
+	}
+
+	&__times {
+		display: flex;
+		justify-content: center;
+		gap: u.rem(4);
+		text-transform: uppercase;
+	}
+
+	&__time {
+		font-weight: 700;
+	}
+
+	&__connector {
+		display: inline-block;
+		font-weight: 600;
+		transform-origin: bottom;
+		scale: 0.8;
+	}
+}
