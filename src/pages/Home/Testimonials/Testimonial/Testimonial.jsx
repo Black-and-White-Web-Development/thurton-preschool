@@ -3,7 +3,7 @@ import "./Testimonial.scss";
 
 const Testimonial = function ({ body, index }) {
 	return (
-		<article data-index={index} className="testimonial">
+		<article className={`testimonial colour-${index % 3}`}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 512 512"
