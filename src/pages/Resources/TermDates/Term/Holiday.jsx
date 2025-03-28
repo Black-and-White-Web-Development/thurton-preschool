@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./term.scss";
+import "./Term.scss";
 
 const Holiday = function ({ holiday }) {
 	return (
