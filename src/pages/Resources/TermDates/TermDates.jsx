@@ -54,12 +54,30 @@ const TermDates = function () {
 	return (
 		<section className="term-dates fb-col-wrapper">
 			<h2 className="term-dates__heading">Term Dates 2024-2025</h2>
-			<div className="term-dates__wrapper">
-				<Term term={autumnTerm} />
-				<Holiday holiday={christmasHoliday} />
-				<Term term={springTerm} />
-				<Holiday holiday={easterHoliday} />
-				<Term term={summerTerm} />
+			<div className="term-dates__content">
+				<div className="term-dates__dates-wrapper">
+					<Term term={autumnTerm} />
+					<Holiday holiday={christmasHoliday} />
+					<Term term={springTerm} />
+					<Holiday holiday={easterHoliday} />
+					<Term term={summerTerm} />
+				</div>
+				<aside className="term-dates__sidebar">
+					<p className="term-dates__description medium">
+						Preschool is open term time only and we follow school term dates and holidays designated
+						by Norfolk County Countil.
+					</p>
+					<p className="term-dates__description medium">
+						To be redirected to their website please follow the link below.
+					</p>
+					<a
+						target="_blank"
+						href="https://www.norfolk.gov.uk/38151"
+						className="term-dates__link medium"
+					>
+						School term dates and school holidays - Norfolk County Council (opens in new tab)
+					</a>
+				</aside>
 			</div>
 		</section>
 	);
