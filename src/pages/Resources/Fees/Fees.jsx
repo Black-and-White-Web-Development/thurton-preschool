@@ -13,13 +13,12 @@ const Fees = function () {
 				to receive your eligibility code.
 			</p>
 			<p>
-				We also now take Kiddivouchers, Edenred and Reward Gateway childcare vouchers. We are also
-				part of the government&apos;s Tax-Free Childcare scheme. Visit{" "}
+				We are part of the government&apos;s Tax-Free Childcare scheme. Visit{" "}
 				<a href="https://www.gov.uk/get-tax-free-childcare">Get Tax-Free Childcare: step by step</a>{" "}
 				for more information.
 			</p>
 			<p>
-				For fee payers we charge a competitive rate of £4.80 per hour, which includes a healthy
+				For fee payers we charge a competitive rate of £5.50 per hour, which includes a healthy
 				snack.
 			</p>
 			<p>

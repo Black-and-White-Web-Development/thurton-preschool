@@ -12,7 +12,7 @@ const About = function () {
 			<section className="about fb-col-wrapper">
 				<h2>Welcome to Thurton Ashby & St Mary Preschool!!!</h2>
 				<p>
-					We provide a safe and nurturing environment in which children from 2 to 4 years of age
+					We provide a safe and nurturing environment in which children from 2 to 5 years of age
 					learn and develop through purposeful play. The children are at the centre of what we do
 					and we consistently reflect on the quality of our provision. We work with parents/carers
 					and other professionals ensuring all children reach their full potential, including

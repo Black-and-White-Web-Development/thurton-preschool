@@ -26,7 +26,7 @@ const Home = function () {
 					learning to understand the world around us.
 				</p>
 				<p>
-					We also off a woodland session once a week where children get to show off a completely
+					We also off a woodland session twice a week where children get to show off a completely
 					different side to themselves, running through the trees and using their imagination,
 					investigative and creative sides in completely different ways. All children who join us at
 					Thurton and Ashby St Mary Pre-school are happy and excited to spend their days with us

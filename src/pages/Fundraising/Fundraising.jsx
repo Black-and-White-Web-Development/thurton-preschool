@@ -31,19 +31,10 @@ const Fundraising = function () {
 						<strong>May 25th 2025</strong>
 					</p>
 					<p>
-						The biggest fundraiser of the year! A great day out for car fanatics big and small –
-						there’s something for everyone. If you wish to book in a car to show or book an
+						The biggest fundraiser of the year! A great day out for car fanatics big and small -
+						there&apos;s something for everyone. If you wish to book in a car to show or book an
 						autojumble stall then please get in touch.
 					</p>
-					<p>
-						On the run up to the Autojumble we will be working in partnership with Thurton
-						Autocentre who are kindly offering to donate £2.50 to our pre-school for every customer
-						that registers with them. Please check out this link to find out more information or if
-						you are interested in getting work done. Thank you
-					</p>
-					<a href="https://www.thurtonautocentre.co.uk/blogs/post/helping-local-charity-raise-funds-for-pre-school">
-						Thurton Autocentre
-					</a>
 					<p>
 						We have also set up a direct gofundme link for the Autojumble here:{" "}
 						<a href="https://www.gofundme.com/f/thurton-autojumble-and-classic-car-show?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer">
@@ -53,6 +44,12 @@ const Fundraising = function () {
 				</div>
 				<div>
 					<h3>Jumble Sale</h3>
+					<p>
+						<strong>Saturday, 12th July 2025</strong>
+					</p>
+					<p>
+						<strong>Saturday, 18th October 2025</strong>
+					</p>
 					<p>Jumble is appreciated and can be brought to the Village Hall from 9am.</p>
 				</div>
 			</section>
@@ -64,8 +61,8 @@ const Fundraising = function () {
 					ASOS, Booking.com, eBay, Boden, and M&S.
 				</p>
 				<p>
-					Every time you shop, you’ll raise a free donation for Thurton & Ashby St.Mary Pre-School
-					every time, it’s that easy!{" "}
+					Every time you shop, you&apos;ll raise a free donation for Thurton & Ashby St. Mary
+					Pre-School every time, it&apos;s that easy!
 				</p>
 				<p>
 					Find out more:{" "}
