@@ -10,7 +10,17 @@ const Contact = function () {
 		<>
 			<Hero heading="Contact" coverImg={coverImg} />
 			<section className="contact fb-col-wrapper">
-				<ContactForm />
+				<div className="contact__wrapper">
+					<div className="contact__details">
+						<p>To book a visit, please contact us using the details below:</p>
+						<p>Thurton & Ashby St Mary Preschool</p>
+						<p>Ashby Road, Thurton, Norwich</p>
+						<p>NR14 6AX</p>
+						<p>Email: info@thurtonpreschool.co.uk</p>
+						<p>Telephone: 07594 649184</p>
+					</div>
+					<ContactForm />
+				</div>
 			</section>
 			<OpeningTimes />
 		</>
