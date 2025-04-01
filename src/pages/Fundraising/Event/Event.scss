@@ -1,0 +1,11 @@
+@use "/src/scss/util" as u;
+
+.event {
+	padding: u.rem(32);
+	background-color: var(--background-primary-shade);
+	border-radius: var(--br-mid);
+
+	&:not(:last-child) {
+		margin-block-end: u.rem(16);
+	}
+}
