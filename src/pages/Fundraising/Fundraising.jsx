@@ -1,7 +1,46 @@
+import Event from "./Event/Event";
 import Hero from "../../partials/Hero/Hero";
 import "./Fundraising.scss";
 
 import coverImg from "/src/assets/images/fundraising.jpg";
+
+const events = [
+	{
+		id: 0,
+		name: "Ice Lolly Fridays",
+		date: null,
+		description:
+			"Grab a yummy after pre-school treat for just 50p on selected Fridays (dates will be advertised in advance).",
+		pageLink: null,
+		pageHeading: null,
+	},
+	{
+		id: 1,
+		name: "Autojumble and Classic Car Show",
+		date: "May 25th 2025",
+		description:
+			"The biggest fundraiser of the year! A great day out for car fanatics big and small - there's something for everyone. If you wish to book in a car to show or book an autojumble stall then please get in touch.",
+		pageLink:
+			"https://www.gofundme.com/f/thurton-autojumble-and-classic-car-show?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
+		pageHeading: "Thurton Autojumble and Classic Car Show",
+	},
+	{
+		id: 2,
+		name: "Jumble Sale",
+		date: "Saturday, 12th July 2025",
+		description: "Jumble is appreciated and can be brought to the Village Hall from 9am.",
+		pageLink: null,
+		pageHeading: null,
+	},
+	{
+		id: 3,
+		name: "Jumble Sale",
+		date: "Saturday, 18th October 2025",
+		description: "Jumble is appreciated and can be brought to the Village Hall from 9am.",
+		pageLink: null,
+		pageHeading: null,
+	},
+];
 
 const Fundraising = function () {
 	return (
@@ -18,39 +57,17 @@ const Fundraising = function () {
 				<p>
 					We have several planned fundraising events for the rest of this year. They are as follows:{" "}
 				</p>
-				<div>
-					<h3>Ice Lolly Fridays</h3>
-					<p>
-						Grab a yummy after pre-school treat for just 50p on selected Fridays (dates will be
-						advertised in advance).
-					</p>
-				</div>
-				<div>
-					<h3>Autojumble and Classic Car Show</h3>
-					<p>
-						<strong>May 25th 2025</strong>
-					</p>
-					<p>
-						The biggest fundraiser of the year! A great day out for car fanatics big and small -
-						there&apos;s something for everyone. If you wish to book in a car to show or book an
-						autojumble stall then please get in touch.
-					</p>
-					<p>
-						We have also set up a direct gofundme link for the Autojumble here:{" "}
-						<a href="https://www.gofundme.com/f/thurton-autojumble-and-classic-car-show?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer">
-							Thurton Autojumble and Classic Car Show
-						</a>
-					</p>
-				</div>
-				<div>
-					<h3>Jumble Sale</h3>
-					<p>
-						<strong>Saturday, 12th July 2025</strong>
-					</p>
-					<p>
-						<strong>Saturday, 18th October 2025</strong>
-					</p>
-					<p>Jumble is appreciated and can be brought to the Village Hall from 9am.</p>
+				<div className="events__wrapper">
+					{events.map(event => (
+						<Event
+							key={event.id}
+							heading={event.name}
+							date={event.date}
+							description={event.description}
+							pageLink={event.pageLink}
+							pageTitle={event.pageHeading}
+						/>
+					))}
 				</div>
 			</section>
 			<section className="fb-col-wrapper">
