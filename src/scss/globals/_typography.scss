@@ -100,3 +100,13 @@ span,
 li {
 	font-family: var(--sans-serif);
 }
+
+a {
+	color: var(--link-primary);
+
+	&:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 1.5px;
+		text-underline-offset: 2px;
+	}
+}
