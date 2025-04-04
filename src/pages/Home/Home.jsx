@@ -1,37 +1,76 @@
+import { useEffect, useState } from "react";
 import HeroHome from "./HeroHome/HeroHome";
 import Testimonials from "./Testimonials/Testimonials";
 
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/home?populate=announcements`;
+const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
+
 const Home = function () {
+	const [homepage, setHomepage] = useState({});
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(API_URL, {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${API_TOKEN}`,
+						"Content-Type": "application/json",
+					},
+				});
+				const data = await response.json();
+				setHomepage(data.data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<>
 			<HeroHome />
 			<section className="fb-col-wrapper">
-				<p>
-					We have spaces available for September 2025. Get in touch NOW to find out more:
-					info@thurtonpreschool.co.uk
-				</p>
-				<p>
-					We will also be offering woodland sessions on a Tuesday for all children and a Friday for
-					children who are three or over.
-				</p>
-				<p>Eligible 2-year-old funding accepted as well as 3/4-year-olds.</p>
-				<p></p>
-				<h2>Welcome to Thurton & Ashby St Mary Preschool</h2>
-				<p>
-					Thurton and Ashby St Mary Pre-school is a charity led setting based out of Thurton Village
-					Hall. We welcome children from the age of 2 up until they start school. We are
-					predominantly based outside in our generous garden. Children can access all areas of the
-					EYFS in a fun, creative and stimulating way. We find allowing children so much time
-					outdoors enables them to develop risk management and independence while constantly
-					learning to understand the world around us.
-				</p>
-				<p>
-					We also off a woodland session twice a week where children get to show off a completely
-					different side to themselves, running through the trees and using their imagination,
-					investigative and creative sides in completely different ways. All children who join us at
-					Thurton and Ashby St Mary Pre-school are happy and excited to spend their days with us
-					where they get opportunities to explore, enjoy and thrive!
-				</p>
+				<aside className="announcements">
+					{Array.isArray(homepage.announcements) &&
+						homepage.announcements.map(message => (
+							<p key={message.id} className="announcements__message">
+								{message.body}
+							</p>
+						))}
+				</aside>
+				<article className="home">
+					<h2 className="home__heading">{homepage.heading}</h2>
+					<div className="home__body">
+						{Array.isArray(homepage.body) &&
+							homepage.body.map((paragraph, i) => (
+								<p className="home__paragraph" key={i}>
+									{paragraph.children?.map((child, j) => {
+										const { text, bold, italic } = child;
+
+										let formatted = text;
+
+										if (bold && italic) {
+											formatted = (
+												<strong key={j}>
+													<em>{text}</em>
+												</strong>
+											);
+										} else if (bold) {
+											formatted = <strong key={j}>{text}</strong>;
+										} else if (italic) {
+											formatted = <em key={j}>{text}</em>;
+										} else {
+											return text;
+										}
+
+										return formatted;
+									})}
+								</p>
+							))}
+					</div>
+				</article>
 			</section>
 			<Testimonials />
 		</>
