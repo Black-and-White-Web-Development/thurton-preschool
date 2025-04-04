@@ -9,9 +9,10 @@
 		box-sizing: border-box;
 		align-content: center;
 		gap: u.rem(32);
-		padding-block: 32px;
+		padding-block-start: 32px;
 
 		@include u.breakpoint(medium) {
+			padding-block: 32px;
 			width: 100%;
 			position: absolute;
 			top: 50%;

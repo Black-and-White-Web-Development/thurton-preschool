@@ -1,0 +1,14 @@
+@use "/src/scss/util" as u;
+
+.announcements {
+	margin-block-end: u.rem(48);
+
+	&__message {
+		border: solid 1px var(--cl-primary);
+		padding: u.rem(16);
+		max-width: 100%;
+		font-weight: 500;
+		background-color: var(--background-primary-shade);
+		border-radius: var(--br-light);
+	}
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroHome from "./HeroHome/HeroHome";
 import Testimonials from "./Testimonials/Testimonials";
+import "./Home.scss";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/home?populate=announcements`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
@@ -35,7 +36,7 @@ const Home = function () {
 				<aside className="announcements">
 					{Array.isArray(homepage.announcements) &&
 						homepage.announcements.map(message => (
-							<p key={message.id} className="announcements__message">
+							<p key={message.id} className="announcements__message small">
 								{message.body}
 							</p>
 						))}
