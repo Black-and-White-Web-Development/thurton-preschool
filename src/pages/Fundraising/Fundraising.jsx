@@ -1,48 +1,36 @@
+import { useEffect, useState } from "react";
 import Event from "./Event/Event";
 import Hero from "../../partials/Hero/Hero";
 import "./Fundraising.scss";
 
 import coverImg from "/src/assets/images/fundraising.jpg";
 
-const events = [
-	{
-		id: 0,
-		name: "Ice Lolly Fridays",
-		date: null,
-		description:
-			"Grab a yummy after pre-school treat for just 50p on selected Fridays (dates will be advertised in advance).",
-		pageLink: null,
-		pageHeading: null,
-	},
-	{
-		id: 1,
-		name: "Autojumble and Classic Car Show",
-		date: "May 25th 2025",
-		description:
-			"The biggest fundraiser of the year! A great day out for car fanatics big and small - there's something for everyone. If you wish to book in a car to show or book an autojumble stall then please get in touch.",
-		pageLink:
-			"https://www.gofundme.com/f/thurton-autojumble-and-classic-car-show?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
-		pageHeading: "Thurton Autojumble and Classic Car Show",
-	},
-	{
-		id: 2,
-		name: "Jumble Sale",
-		date: "Saturday, 12th July 2025",
-		description: "Jumble is appreciated and can be brought to the Village Hall from 9am.",
-		pageLink: null,
-		pageHeading: null,
-	},
-	{
-		id: 3,
-		name: "Jumble Sale",
-		date: "Saturday, 18th October 2025",
-		description: "Jumble is appreciated and can be brought to the Village Hall from 9am.",
-		pageLink: null,
-		pageHeading: null,
-	},
-];
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/events`;
+const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Fundraising = function () {
+	const [events, setEvents] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(API_URL, {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${API_TOKEN}`,
+						"Content-Type": "application/json",
+					},
+				});
+				const data = await response.json();
+				setEvents(data.data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<>
 			<Hero heading="Fundraising" coverImg={coverImg} />
@@ -61,11 +49,9 @@ const Fundraising = function () {
 					{events.map(event => (
 						<Event
 							key={event.id}
-							heading={event.name}
+							heading={event.heading}
 							date={event.date}
 							description={event.description}
-							pageLink={event.pageLink}
-							pageTitle={event.pageHeading}
 						/>
 					))}
 				</div>
