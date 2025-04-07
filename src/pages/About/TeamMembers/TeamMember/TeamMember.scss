@@ -27,7 +27,7 @@
 
 	&__body {
 		@include u.breakpoint(large) {
-			height: clamp(14.375rem, 38.4375rem + -35vw, 18.75rem);
+			height: clamp(u.rem(240), u.rem(42.5) + -30vw, u.rem(320));
 			overflow: scroll;
 		}
 	}
