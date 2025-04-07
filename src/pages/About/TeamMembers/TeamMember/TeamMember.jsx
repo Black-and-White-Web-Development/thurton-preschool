@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import "./TeamMember.scss";
 
 import logo from "/src/assets/logo/thurton-preschool-logo.jpg";
+
+const API_URL = import.meta.env.VITE_CMS_URL;
 
 const TeamMember = function ({ teamMember }) {
 	return (
@@ -11,8 +14,8 @@ const TeamMember = function ({ teamMember }) {
 					{teamMember.portrait ? (
 						<img
 							className="team-member__portrait-image"
-							src={teamMember.portrait}
-							alt={`Portrait of ${teamMember.firstName} ${teamMember.lastName}`}
+							src={API_URL + teamMember.portrait.url}
+							alt={teamMember.portrait.alternativeText || `Portrait of ${teamMember.name}`}
 						/>
 					) : (
 						<img
@@ -31,15 +34,23 @@ const TeamMember = function ({ teamMember }) {
 			</header>
 			<div className="team-member__body">
 				<h4 className="team-member__subheading">About {teamMember.firstName}</h4>
-				<p className="team-member__bio">{teamMember.bio}</p>
+				<BlocksRenderer
+					content={teamMember.bio}
+					blocks={{
+						paragraph: ({ children }) => <p className="team-member__bio">{children}</p>,
+					}}
+				/>
 			</div>
 			<div className="team-member__qualifications">
 				<h4 className="team-member__subheading">{teamMember.firstName}&apos;s qualifications</h4>
 				<dl className="team-member__qualifications-list">
 					{teamMember.qualifications.map(qualification => (
 						<div key={qualification.id} className="team-member__qualification">
-							<dt className="team-member__qualification-name">{qualification.name}</dt>
-							<dd className="team-member__qualification-year">{qualification.year}</dd>
+							<dt className="team-member__qualification-name">
+								{qualification.inProgress ? "Currently studying " : ""}
+								{qualification.qualification.name}
+							</dt>
+							<dd className="team-member__qualification-year">{qualification.completionYear}</dd>
 						</div>
 					))}
 				</dl>
@@ -53,9 +64,14 @@ TeamMember.propTypes = {
 		id: PropTypes.number,
 		firstName: PropTypes.string,
 		lastName: PropTypes.string,
-		portrait: PropTypes.string,
+		portrait: PropTypes.object,
 		role: PropTypes.string,
-		bio: PropTypes.string,
+		bio: PropTypes.arrayOf(
+			PropTypes.shape({
+				type: PropTypes.string,
+				children: PropTypes.array,
+			})
+		),
 		qualifications: PropTypes.arrayOf(
 			PropTypes.shape({
 				id: PropTypes.number,
