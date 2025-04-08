@@ -1,14 +1,32 @@
+import { useEffect, useState } from "react";
 import "./Committee.scss";
 
-const committeeMembers = [
-	{ id: 0, role: "Chair", name: "Janet Reynolds" },
-	{ id: 1, role: "Treasurer", name: "Sandra Rennie" },
-	{ id: 2, role: "Secretary", name: "Amy Whittam" },
-	{ id: 3, role: "Finance Officer", name: "Julie Lincoln" },
-	{ id: 4, role: "Other members", name: "Michelle Stone" },
-];
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/committees`;
+const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Committee = function () {
+	const [committeeMembers, setCommitteeMembers] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(API_URL, {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${API_TOKEN}`,
+						"Content-Type": "application/json",
+					},
+				});
+				const data = await response.json();
+				setCommitteeMembers(data.data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<section className="committee fb-col-wrapper">
 			<h2 className="committee-heading">Our Committee</h2>
@@ -25,7 +43,9 @@ const Committee = function () {
 				{committeeMembers.map(member => (
 					<div key={member.id} className="committee__member">
 						<dt className="committee__role small">{member.role}</dt>
-						<dd className="committee__name">{member.name}</dd>
+						<dd className="committee__name">
+							{member.firstName} {member.lastName}
+						</dd>
 					</div>
 				))}
 			</dl>
