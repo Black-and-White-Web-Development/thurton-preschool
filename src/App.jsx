@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Home from "/src/pages/Home/Home";
 import About from "/src/pages/About/About";
 import Resources from "/src/pages/Resources/Resources";
@@ -11,7 +13,32 @@ import Accessibility from "/src/pages/legal/Accessibility";
 import Navigation from "/src/partials/Navigation/Navigation";
 import Footer from "/src/partials/Footer/Footer";
 
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/website-info`;
+const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
+
 function App() {
+	const [siteInfo, setSiteInfo] = useState({});
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(API_URL, {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${API_TOKEN}`,
+						"Content-Type": "application/json",
+					},
+				});
+				const data = await response.json();
+				setSiteInfo(data.data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	const mainRoutes = [
 		{ path: "/", label: "Home", page: <Home /> },
 		{ path: "/about", label: "About", page: <About /> },
@@ -24,12 +51,12 @@ function App() {
 		{
 			path: "/terms-of-use",
 			label: "Terms of use",
-			page: <TermsOfUse siteName="Thurton & Ashby St Mary Preschool" />,
+			page: <TermsOfUse siteName={siteInfo.siteTitle} />,
 		},
 		{
 			path: "/privacy-policy",
 			label: "Privacy policy",
-			page: <PrivacyPolicy siteName="Thurton & Ashby St Mary Preschool" />,
+			page: <PrivacyPolicy siteName={siteInfo.siteTitle} />,
 		},
 		{ path: "/cookies", label: "Cookie policy", page: <CookiePolicy /> },
 		{ path: "/accessibility", label: "Accessibility", page: <Accessibility /> },
@@ -47,7 +74,7 @@ function App() {
 					))}
 				</Routes>
 			</main>
-			<Footer />
+			<Footer siteInfo={siteInfo} />
 		</>
 	);
 }

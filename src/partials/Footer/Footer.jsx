@@ -1,14 +1,15 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./Footer.scss";
 
-const Footer = function () {
+const Footer = function ({ siteInfo }) {
 	return (
 		<footer className="footer fb-col-wrapper">
 			<div className="footer__copyright-wrapper">
-				<h3 className="footer__copyright-heading">Thurton & Ashby St Mary Preschool</h3>
+				<h3 className="footer__copyright-heading">{siteInfo.siteTitle}</h3>
 				<p className="footer__copyright-text">
-					Copyright © 1994 - {new Date().getFullYear()} Thurton & Ashby St Mary Preschool. All
-					rights reserved. Registered Charity Number 1036204.
+					Copyright © {siteInfo.foundingYear} - {new Date().getFullYear()} {siteInfo.siteTitle}. All
+					rights reserved. Registered Charity Number {siteInfo.charityNumber}.
 				</p>
 			</div>
 			<div className="footer__content-wrapper">
@@ -133,6 +134,14 @@ const Footer = function () {
 			</div>
 		</footer>
 	);
+};
+
+Footer.propTypes = {
+	siteInfo: PropTypes.shape({
+		siteTitle: PropTypes.string,
+		foundingYear: PropTypes.number,
+		charityNumber: PropTypes.number,
+	}),
 };
 
 export default Footer;

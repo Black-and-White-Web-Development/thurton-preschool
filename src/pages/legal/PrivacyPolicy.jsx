@@ -72,7 +72,7 @@ const PrivacyPolicy = function ({ siteName }) {
 };
 
 PrivacyPolicy.propTypes = {
-	siteName: PropTypes.string.isRequired,
+	siteName: PropTypes.string,
 };
 
 export default PrivacyPolicy;

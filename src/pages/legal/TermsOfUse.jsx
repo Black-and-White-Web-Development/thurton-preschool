@@ -66,7 +66,7 @@ const TermsOfUse = function ({ siteName }) {
 };
 
 TermsOfUse.propTypes = {
-	siteName: PropTypes.string.isRequired,
+	siteName: PropTypes.string,
 };
 
 export default TermsOfUse;
