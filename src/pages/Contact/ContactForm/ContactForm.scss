@@ -1,29 +1,50 @@
+@use "/src/scss/util/" as u;
+
 .form {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 
+	&--success {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: u.rem(32);
+
+		transform: translateY(2rem);
+
+		background-color: var(--background-primary-shade);
+		border-radius: var(--br-mid);
+
+		@include u.breakpoint-down(medium) {
+			padding: u.rem(32);
+		}
+	}
+
 	&__button {
-		border: none;
+		border: solid 1px;
 		border-radius: var(--br-light);
-		padding: 0.5rem 1rem;
+		padding: 0.75rem 1.5rem;
 
-		font-size: 1rem;
-		font-weight: 400;
-	}
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.78125rem + 0.5vw, u.rem(18));
+		font-weight: 700;
 
-	&__button--submit {
-		border: solid 1px transparent;
 		color: white;
-		background-color: var(--cl-primary);
+		border-color: white;
 		transition: 600ms;
-	}
 
-	&__button--submit:hover {
-		border-color: var(--cl-primary);
-		color: var(--cl-primary);
-		background-color: var(--background-secondary);
-		transition: 200ms;
+		&--submit {
+			border-color: transparent;
+			background-color: var(--cl-primary-shade);
+		}
+
+		&--submit:hover {
+			border-color: var(--cl-primary);
+			color: var(--cl-primary);
+			background-color: var(--background-secondary);
+			transition: 200ms;
+		}
 	}
 }
 
@@ -70,6 +91,10 @@
 		font-size: inherit;
 
 		transition: border-color 600ms;
+
+		&--textarea {
+			resize: vertical;
+		}
 	}
 
 	&__input:focus-visible {
