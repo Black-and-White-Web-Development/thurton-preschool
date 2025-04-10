@@ -3,7 +3,6 @@ import "./ContactForm.scss";
 
 const ContactForm = function () {
 	const [submitted, setSubmitted] = useState(false);
-	const [loading, setLoading] = useState(false);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -42,8 +41,8 @@ const ContactForm = function () {
 
 	if (submitted) {
 		return (
-			<div className="form__success">
-				<p>🎉 Your message has been sent!</p>
+			<div className="form form--success">
+				<span>Thank you, your message has been sent!</span>
 				<button onClick={handleReset} className="form__button form__button--reset">
 					Send another message
 				</button>
@@ -95,7 +94,7 @@ const ContactForm = function () {
 						id="message"
 						name="message"
 						rows={4}
-						className="field__input"
+						className="field__input field__input--textarea"
 					></textarea>
 				</div>
 			</div>
