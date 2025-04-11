@@ -112,6 +112,8 @@
 		calc(var(--cl-error-lightness) * var(--cl-shade-multiplier))
 	);
 
+	--cl: #5c798a;
+
 	--cl-neutral-hue: 202;
 	--cl-neutral-saturation: 20%;
 	--cl-neutral-000: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 100%);

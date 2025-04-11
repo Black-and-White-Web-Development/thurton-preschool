@@ -2,4 +2,17 @@
 
 .about {
 	display: initial;
+
+	&__subheading {
+		margin-block-end: u.rem(18);
+		font-size: u.rem(18);
+		font-size: clamp(u.rem(18), 0.78125rem + 0.5vw, u.rem(24));
+		color: var(--text-primary);
+	}
+
+	&__paragraph {
+		&:not(:last-child) {
+			margin-block-end: u.rem(32);
+		}
+	}
 }
