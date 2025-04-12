@@ -51,7 +51,7 @@ const HeroHome = function () {
 					<Link to="/contact" className="hero--home__cta">
 						Contact us
 					</Link>
-					<Link to="/" className="hero--home__cta">
+					<Link to="/resources/#term-dates" className="hero--home__cta">
 						Term dates
 					</Link>
 				</div>

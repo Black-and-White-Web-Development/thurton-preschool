@@ -34,7 +34,7 @@ const Fundraising = function () {
 	return (
 		<>
 			<Hero heading="Fundraising" coverImg={coverImg} />
-			<section className="fundraising fb-col-wrapper">
+			<section id="events" className="fundraising fb-col-wrapper">
 				<h2>Upcoming events</h2>
 				<p>
 					The Preschool is a charity led organisation that holds fundraisers throughout the year to

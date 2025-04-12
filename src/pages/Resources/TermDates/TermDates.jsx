@@ -52,7 +52,7 @@ const summerTerm = {
 
 const TermDates = function () {
 	return (
-		<section className="term-dates fb-col-wrapper">
+		<section id="term-dates" className="term-dates fb-col-wrapper">
 			<h2 className="term-dates__heading">Term Dates 2024-2025</h2>
 			<div className="term-dates__content">
 				<div className="term-dates__dates-wrapper">

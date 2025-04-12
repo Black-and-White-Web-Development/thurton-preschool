@@ -70,7 +70,7 @@ const Testimonials = () => {
 	const handleMouseLeave = () => setIsHovered(false);
 
 	return (
-		<section className="testimonials fb-col-wrapper">
+		<section id="testimonials" className="testimonials fb-col-wrapper">
 			<h2 className="testimonials__heading">What our families say about us</h2>
 			<div
 				ref={wrapperRef}

@@ -28,7 +28,7 @@ const Committee = function () {
 	}, []);
 
 	return (
-		<section className="committee fb-col-wrapper">
+		<section id="committee" className="committee fb-col-wrapper">
 			<h2 className="committee-heading">Our Committee</h2>
 			<p className="committee__description">
 				Our pre-school is run by a committee that is made up of parents and ex-staff members of the

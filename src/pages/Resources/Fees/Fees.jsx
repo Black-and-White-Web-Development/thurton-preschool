@@ -1,6 +1,6 @@
 const Fees = function () {
 	return (
-		<section className="fees fb-col-wrapper">
+		<section id="fees" className="fees fb-col-wrapper">
 			<h2>Fees and Grant Funding</h2>
 			<p>
 				Thurton and Ashby St. Mary Preschool offers the Universal Entitlement of up to 15 hours

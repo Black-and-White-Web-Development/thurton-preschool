@@ -31,7 +31,7 @@ const TeamMembers = function () {
 	}, []);
 
 	return (
-		<section className="team-members fb-col-wrapper">
+		<section id="staff" className="team-members fb-col-wrapper">
 			<h2 className="team-members__heading">Meet the team</h2>
 			<p className="team-members__description medium">
 				We employ six Practitioners who are highly qualified in early years childcare. They
