@@ -45,10 +45,12 @@ h2 {
 }
 
 h3 {
-	margin-block-end: u.rem(24);
+	margin-block-end: u.rem(20);
+	margin-block-end: clamp(u.rem(20), 0.8125rem + 1vw, u.rem(24));
+
 	font-family: var(--sans-serif);
-	font-size: u.rem(24);
-	font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
+	font-size: u.rem(20);
+	font-size: clamp(u.rem(20), 0.8125rem + 1vw, u.rem(24));
 	font-weight: 700;
 	line-height: 1;
 
@@ -79,8 +81,8 @@ a {
 	}
 
 	&.medium {
-		font-size: u.rem(16);
-		font-size: clamp(u.rem(16), 0.5625rem + 1vw, u.rem(20));
+		font-size: u.rem(18);
+		font-size: clamp(u.rem(18), 0.90625rem + 0.5vw, u.rem(20));
 		font-weight: 500;
 
 		&:not(:last-child) {
