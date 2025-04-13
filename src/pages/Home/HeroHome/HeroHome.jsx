@@ -5,11 +5,16 @@ import Video from "../Video/Video";
 
 import thurtonPromo from "/src/assets/videos/thurton-preschool-promo.mp4";
 
-const API_URL = `${import.meta.env.VITE_CMS_URL}/api/home`;
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/home?populate=pages`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const HeroHome = function () {
-	const [homepage, setHomepage] = useState({});
+	const [homepage, setHomepage] = useState({
+		subheadline: "",
+		headline: "",
+		pages: [],
+		heading: "",
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -48,12 +53,11 @@ const HeroHome = function () {
 						))}
 				</div>
 				<div className="hero--home__actions">
-					<Link to="/contact" className="hero--home__cta">
-						Contact us
-					</Link>
-					<Link to="/resources/#term-dates" className="hero--home__cta">
-						Term dates
-					</Link>
+					{homepage.pages.map(link => (
+						<Link key={link.id} to={link.url} className="hero--home__cta">
+							{link.title}
+						</Link>
+					))}
 				</div>
 			</div>
 		</section>
