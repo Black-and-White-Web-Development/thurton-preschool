@@ -1,31 +1,29 @@
 import PropTypes from "prop-types";
 import "./Term.scss";
 
+const formatDate = dateStr => {
+	return new Intl.DateTimeFormat("en-GB", {
+		weekday: "long",
+		day: "numeric",
+		month: "long",
+	})
+		.format(new Date(dateStr))
+		.replace(/^(\w+)(\s)/, "$1,$2");
+};
+
 const Term = function ({ term }) {
 	return (
 		<article className="term">
-			<h3 className="term__heading">
-				{term.name} {term.year}
-			</h3>
+			<h3 className="term__heading">{term.heading}</h3>
 			<dl className="term__dates-list">
-				<div className="term__span">
-					<dt className="term__name">{term.name} 1</dt>
-					<dd className="term__dates">
-						{term.firstHalfStart} - {term.firstHalfEnd}
-					</dd>
-				</div>
-				<div className="term__span">
-					<dt className="term__name">Half term</dt>
-					<dd className="term__dates">
-						{term.halfTermStart} - {term.halfTermEnd}
-					</dd>
-				</div>
-				<div className="term__span">
-					<dt className="term__name">{term.name} 2</dt>
-					<dd className="term__dates">
-						{term.secondHalfStart} - {term.secondHalfEnd}
-					</dd>
-				</div>
+				{term.termDates?.map(dates => (
+					<div key={dates.id} className="term__span">
+						{dates.heading && <dt className="term__name">{dates.heading}</dt>}
+						<dd className="term__dates">
+							{formatDate(dates.startDate)} - {formatDate(dates.endDate)}
+						</dd>
+					</div>
+				))}
 			</dl>
 		</article>
 	);
