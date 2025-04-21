@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import TeamMember from "./TeamMember/TeamMember";
 import "./TeamMembers.scss";
 
@@ -7,7 +9,7 @@ const API_URL = `${
 }/api/staff-members?populate[portrait]=true&populate[qualifications][populate]=qualification`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
-const TeamMembers = function () {
+const TeamMembers = function ({ heading, body }) {
 	const [teamMembers, setTeamMembers] = useState([]);
 
 	useEffect(() => {
@@ -32,11 +34,17 @@ const TeamMembers = function () {
 
 	return (
 		<section id="staff" className="team-members fb-col-wrapper">
-			<h2 className="team-members__heading">Meet the team</h2>
-			<p className="team-members__description medium">
-				We employ six Practitioners who are highly qualified in early years childcare. They
-				regularly update their training including safe guarding and paediatric first aid.
-			</p>
+			<h2 className="team-members__heading">{heading}</h2>
+			{body && (
+				<BlocksRenderer
+					content={body}
+					blocks={{
+						paragraph: ({ children }) => (
+							<p className="team-members__description medium">{children}</p>
+						),
+					}}
+				/>
+			)}
 			<ul className="team-members__list">
 				{teamMembers
 					.sort((a, b) => a.id - b.id)
@@ -48,6 +56,11 @@ const TeamMembers = function () {
 			</ul>
 		</section>
 	);
+};
+
+TeamMember.propTypes = {
+	heading: PropTypes.string,
+	body: PropTypes.array,
 };
 
 export default TeamMembers;

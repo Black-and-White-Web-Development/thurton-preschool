@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import "./Committee.scss";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/committees`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
-const Committee = function () {
+const Committee = function ({ heading, body }) {
 	const [committeeMembers, setCommitteeMembers] = useState([]);
 
 	useEffect(() => {
@@ -29,16 +31,15 @@ const Committee = function () {
 
 	return (
 		<section id="committee" className="committee fb-col-wrapper">
-			<h2 className="committee-heading">Our Committee</h2>
-			<p className="committee__description">
-				Our pre-school is run by a committee that is made up of parents and ex-staff members of the
-				pre-school. The committee and staff meet regularly throughout the year to help with its
-				smooth running and to organise fundraising events!
-			</p>
-			<p className="committee__description">
-				If you are interested in joining or finding out more about the committee then please contact
-				an existing committee member or our playleader, Ellen.
-			</p>
+			<h2 className="committee-heading">{heading}</h2>
+			{body && (
+				<BlocksRenderer
+					content={body}
+					blocks={{
+						paragraph: ({ children }) => <p className="committee__description">{children}</p>,
+					}}
+				/>
+			)}
 			<dl className="committee__members-list">
 				{committeeMembers.map(member => (
 					<div key={member.id} className="committee__member">
@@ -51,6 +52,11 @@ const Committee = function () {
 			</dl>
 		</section>
 	);
+};
+
+Committee.propTypes = {
+	heading: PropTypes.string,
+	body: PropTypes.array,
 };
 
 export default Committee;

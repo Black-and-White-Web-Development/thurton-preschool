@@ -48,8 +48,8 @@ const About = function () {
 					))}
 				</div>
 			</section>
-			<TeamMembers />
-			<Committee />
+			<TeamMembers heading={about.staffHeading} body={about.staffBody} />
+			<Committee heading={about.committeeHeading} body={about.committeeBody} />
 		</>
 	);
 };
