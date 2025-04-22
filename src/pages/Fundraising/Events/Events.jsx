@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Event from "./Event/Event";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/events`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
-const Events = function () {
+const Events = function ({ heading, body }) {
 	const [events, setEvents] = useState([]);
 
 	useEffect(() => {
@@ -29,16 +30,15 @@ const Events = function () {
 
 	return (
 		<section id="events" className="fundraising fb-col-wrapper">
-			<h2>Upcoming events</h2>
-			<p>
-				The Preschool is a charity led organisation that holds fundraisers throughout the year to
-				keep it running. We have an elected committee who together with the staff organise and run
-				many different events. Please consider supporting us by volunteering or coming to our
-				events. Thank you.{" "}
-			</p>
-			<p>
-				We have several planned fundraising events for the rest of this year. They are as follows:{" "}
-			</p>
+			<h2>{heading}</h2>
+			{body && (
+				<BlocksRenderer
+					content={body}
+					blocks={{
+						paragraph: ({ children }) => <p className="committee__description">{children}</p>,
+					}}
+				/>
+			)}
 			<div className="events__wrapper">
 				{events.map(event => (
 					<Event

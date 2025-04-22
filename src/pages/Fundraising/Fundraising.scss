@@ -2,4 +2,8 @@
 
 .fundraising {
 	display: initial;
+
+	&__content-blocks {
+		background-color: var(--background-secondary);
+	}
 }
