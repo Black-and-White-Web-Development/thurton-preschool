@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Link } from "react-router-dom";
+import "./ContentBlock.scss";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}`;
 
