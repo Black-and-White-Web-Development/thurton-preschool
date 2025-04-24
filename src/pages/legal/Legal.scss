@@ -2,7 +2,12 @@
 
 .legal {
 	&__subheading {
-		margin-block-start: u.rem(16);
+    margin-block-end: u.rem(12);
+    margin-block-end: clamp(u.rem(12), 0.8125rem + 1vw, u.rem(16));
+  
+    font-size: u.rem(24);
+    font-size: clamp(u.rem(24), 0.625rem + 2vw, u.rem(32));
+		margin-block-start: u.rem(32);
 		color: var(--foreground-tint);
 	}
 
