@@ -3,8 +3,12 @@ import "./Hero.scss";
 
 const Hero = function ({ heading, coverImg }) {
 	return (
-		<section className="hero">
-			<img src={coverImg} alt="" className="hero__cover-img" />
+		<section className={`hero ${coverImg && "hero--cover-img"}`}>
+			{coverImg ? (
+				<img src={coverImg} alt="" className="hero__cover-img" />
+			) : (
+				<div className="hero__cover"></div>
+			)}
 			<div className="hero__content fb-col-wrapper">
 				<h1 className="hero__heading">{heading}</h1>
 			</div>
