@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Holiday from "./Term/Holiday";
 import Term from "./Term/Term";
 import "./TermDates.scss";
@@ -6,7 +8,7 @@ import "./TermDates.scss";
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/terms?populate=termDates`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
-const TermDates = function () {
+const TermDates = function ({ heading, body }) {
 	const [terms, setTerms] = useState([]);
 
 	useEffect(() => {
@@ -31,7 +33,7 @@ const TermDates = function () {
 
 	return (
 		<section id="term-dates" className="term-dates fb-col-wrapper">
-			<h2 className="term-dates__heading">Term Dates 2024-2025</h2>
+			<h2 className="term-dates__heading">{heading}</h2>
 			{console.log(terms)}
 			<div className="term-dates__content">
 				<div className="term-dates__dates-wrapper">
@@ -40,24 +42,34 @@ const TermDates = function () {
 					))}
 				</div>
 				<aside className="term-dates__sidebar">
-					<p className="term-dates__description medium">
-						Preschool is open term time only and we follow school term dates and holidays designated
-						by Norfolk County Countil.
-					</p>
-					<p className="term-dates__description medium">
-						To be redirected to their website please follow the link below.
-					</p>
-					<a
-						target="_blank"
-						href="https://www.norfolk.gov.uk/38151"
-						className="term-dates__link medium"
-					>
-						School term dates and school holidays - Norfolk County Council (opens in new tab)
-					</a>
+					{body && (
+						<BlocksRenderer
+							content={body}
+							blocks={{
+								paragraph: ({ children }) => (
+									<p className="term-dates__description medium">{children}</p>
+								),
+								link: ({ children }) => (
+									<a
+										target="_blank"
+										href="https://www.norfolk.gov.uk/38151"
+										className="term-dates__link medium"
+									>
+										{children} (opens in new tab)
+									</a>
+								),
+							}}
+						/>
+					)}
 				</aside>
 			</div>
 		</section>
 	);
+};
+
+TermDates.propTypes = {
+	heading: PropTypes.string,
+	body: PropTypes.array,
 };
 
 export default TermDates;

@@ -6,7 +6,6 @@ import "./Fundraising.scss";
 
 import coverImg from "/src/assets/images/fundraising.jpg";
 
-// const API_URL = `${import.meta.env.VITE_CMS_URL}/api/fundraising`;
 const API_URL = `${
 	import.meta.env.VITE_CMS_URL
 }/api/fundraising?populate[contentBlocks][populate]=image`;
