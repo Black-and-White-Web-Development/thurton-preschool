@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import Holiday from "./Term/Holiday";
 import Term from "./Term/Term";
 import "./TermDates.scss";
 
