@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
 import Testimonial from "./Testimonial/Testimonial";
 import "./Testimonials.scss";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/testimonials`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
-const Testimonials = () => {
+const Testimonials = ({ heading }) => {
 	const [testimonials, setTestimonials] = useState([]);
 	const [isHovered, setIsHovered] = useState(false);
 	const wrapperRef = useRef(null);
@@ -71,7 +72,7 @@ const Testimonials = () => {
 
 	return (
 		<section id="testimonials" className="testimonials fb-col-wrapper">
-			<h2 className="testimonials__heading">What our families say about us</h2>
+			<h2 className="testimonials__heading">{heading}</h2>
 			<div
 				ref={wrapperRef}
 				className="testimonials__wrapper fb-col-wrapper__fb"
@@ -84,6 +85,10 @@ const Testimonials = () => {
 			</div>
 		</section>
 	);
+};
+
+Testimonials.propTypes = {
+	heading: PropTypes.string,
 };
 
 export default Testimonials;
