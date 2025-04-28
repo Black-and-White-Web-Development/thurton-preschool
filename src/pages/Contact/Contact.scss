@@ -4,13 +4,22 @@
 	@include u.breakpoint(large) {
 		&__wrapper {
 			display: flex;
-			flex-direction: row-reverse;
 			gap: u.rem(32);
 
 			& > * {
-				flex: 0 0 50%;
-				min-width: 100px;
+        flex: 1;
 			}
 		}
 	}
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+    padding: u.rem(32);
+    
+    border-radius: var(--br-mid);
+    background-color: var(--background-primary-shade);
+  }
 }
+
