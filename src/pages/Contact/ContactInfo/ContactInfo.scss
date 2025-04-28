@@ -1,0 +1,27 @@
+@use "/src/scss/util" as u;
+
+.contact-info {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(16);
+	}
+
+	&__term {
+		margin-block-end: u.rem(4);
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.78125rem + 0.5vw, u.rem(18));
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--text-secondary);
+	}
+
+	&__details {
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.78125rem + 0.5vw, u.rem(18));
+	}
+
+	&__address {
+		margin-block-end: u.rem(4) !important;
+	}
+}
