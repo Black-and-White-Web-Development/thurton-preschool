@@ -40,7 +40,9 @@ const ContactInfo = function () {
 				</div>
 				<div className="contact-info__list-item">
 					<dt className="contact-info__term">Telephone</dt>
-					<dd className="contact-info__details">{formatPhoneNumber(content.contactNumber)}</dd>
+					<dd className="contact-info__details">
+						{content.contactNumber && formatPhoneNumber(content.contactNumber)}
+					</dd>
 				</div>
 				<div className="contact-info__list-item">
 					<dt className="contact-info__term">Address</dt>
