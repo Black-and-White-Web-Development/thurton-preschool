@@ -1,118 +1,12 @@
+@use "../util/generate-colour" as colour;
+
 :root {
-	--cl-tint-multiplier: 1.3;
-	--cl-shade-multiplier: 0.8;
-
-	--cl-primary-hue: 190;
-	--cl-primary-saturation: 75%;
-	--cl-primary-lightness: 40%;
-	--cl-primary: hsl(
-		var(--cl-primary-hue),
-		var(--cl-primary-saturation),
-		var(--cl-primary-lightness)
-	);
-	--cl-primary-tint: hsl(
-		var(--cl-primary-hue),
-		var(--cl-primary-saturation),
-		calc(var(--cl-primary-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-primary-shade: hsl(
-		var(--cl-primary-hue),
-		var(--cl-primary-saturation),
-		calc(var(--cl-primary-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl-secondary-hue: 40;
-	--cl-secondary-saturation: 70%;
-	--cl-secondary-lightness: 50%;
-	--cl-secondary: hsl(
-		var(--cl-secondary-hue),
-		var(--cl-secondary-saturation),
-		var(--cl-secondary-lightness)
-	);
-	--cl-secondary-tint: hsl(
-		var(--cl-secondary-hue),
-		var(--cl-secondary-saturation),
-		calc(var(--cl-secondary-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-secondary-shade: hsl(
-		var(--cl-secondary-hue),
-		var(--cl-secondary-saturation),
-		calc(var(--cl-secondary-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl-tertiary-hue: 310;
-	--cl-tertiary-saturation: 80%;
-	--cl-tertiary-lightness: 50%;
-	--cl-tertiary: hsl(
-		var(--cl-tertiary-hue),
-		var(--cl-tertiary-saturation),
-		var(--cl-tertiary-lightness)
-	);
-	--cl-tertiary-tint: hsl(
-		var(--cl-tertiary-hue),
-		var(--cl-tertiary-saturation),
-		calc(var(--cl-tertiary-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-tertiary-shade: hsl(
-		var(--cl-tertiary-hue),
-		var(--cl-tertiary-saturation),
-		calc(var(--cl-tertiary-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl-success-hue: 140;
-	--cl-success-saturation: 100%;
-	--cl-success-lightness: 50%;
-	--cl-success: hsl(
-		var(--cl-success-hue),
-		var(--cl-success-saturation),
-		var(--cl-success-lightness)
-	);
-	--cl-success-tint: hsl(
-		var(--cl-success-hue),
-		var(--cl-success-saturation),
-		calc(var(--cl-success-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-success-shade: hsl(
-		var(--cl-success-hue),
-		var(--cl-success-saturation),
-		calc(var(--cl-success-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl-warning-hue: 50;
-	--cl-warning-saturation: 100%;
-	--cl-warning-lightness: 50%;
-	--cl-warning: hsl(
-		var(--cl-warning-hue),
-		var(--cl-warning-saturation),
-		var(--cl-warning-lightness)
-	);
-	--cl-warning-tint: hsl(
-		var(--cl-warning-hue),
-		var(--cl-warning-saturation),
-		calc(var(--cl-warning-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-warning-shade: hsl(
-		var(--cl-warning-hue),
-		var(--cl-warning-saturation),
-		calc(var(--cl-warning-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl-error-hue: 10;
-	--cl-error-saturation: 70%;
-	--cl-error-lightness: 60%;
-	--cl-error: hsl(var(--cl-error-hue), var(--cl-error-saturation), var(--cl-error-lightness));
-	--cl-error-tint: hsl(
-		var(--cl-error-hue),
-		100%,
-		calc(var(--cl-error-lightness) * var(--cl-tint-multiplier))
-	);
-	--cl-error-shade: hsl(
-		var(--cl-error-hue),
-		var(--cl-error-saturation),
-		calc(var(--cl-error-lightness) * var(--cl-shade-multiplier))
-	);
-
-	--cl: #5c798a;
+  @include colour.generate("primary", 190, 75%, 40%, $tint-multiplier: 1.3);
+  @include colour.generate("secondary", 40, 70%, 50%, $tint-multiplier: 1.3);
+  @include colour.generate("tertiary", 310, 80%, 50%);
+  @include colour.generate("success", 140, 100%, 50%);
+  @include colour.generate("warning", 50, 90%, 50%);
+  @include colour.generate("error", 10, 70%, 60%);
 
 	--cl-neutral-hue: 202;
 	--cl-neutral-saturation: 20%;
@@ -126,10 +20,6 @@
 	--cl-neutral-700: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 25%);
 	--cl-neutral-800: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 15%);
 	--cl-neutral-900: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 0%);
-
-	--foreground-tint: black;
-	--foreground: hsl(0, 0%, 15%);
-	--foreground-shade: hsl(0, 0%, 30%);
 
 	--heading-primary: var(--cl-neutral-900);
 	--heading-secondary: var(--cl-secondary-shade);
@@ -152,10 +42,9 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--cl-primary-lightness: 60%;
-		--cl-neutral-saturation: 30%;
-		--cl-shade-multiplier: 0.6;
+		@include colour.generate("primary", 190, 75%, 60%, $shade-multiplier: 0.6);
 
+		--cl-neutral-saturation: 30%;
 		--cl-neutral-500: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 65%);
 
 		--heading-primary: var(--cl-neutral-200);
