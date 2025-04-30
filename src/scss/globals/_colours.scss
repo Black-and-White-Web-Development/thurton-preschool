@@ -1,3 +1,4 @@
+@use "../util/colour-themes" as theme;
 @use "../util/generate-colour" as colour;
 
 :root {
@@ -21,51 +22,15 @@
 	--cl-neutral-800: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 15%);
 	--cl-neutral-900: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 0%);
 
-	--heading-primary: var(--cl-neutral-900);
-	--heading-secondary: var(--cl-secondary-shade);
-	--text-primary: var(--cl-neutral-800);
-	--text-secondary: var(--cl-neutral-600);
-	--link-primary: var(--cl-primary-shade);
-	--background-primary: var(--cl-neutral-000);
-	--background-primary-shade: var(--cl-neutral-100);
-	--background-secondary: var(--cl-neutral-300);
-	--background-secondary-tint: var(--cl-neutral-200);
-	--background-secondary-shade: var(--cl-neutral-400);
-	--midground: var(--cl-neutral-500);
-	--foreground: var(--cl-neutral-800);
-	--foreground-tint: var(--cl-neutral-700);
-	--foreground-shade: var(--cl-neutral-900);
-	--cl-background-trans: hsl(0, 0%, 100%, 0.9);
-
 	color-scheme: light dark;
 }
 
+body {
+  @include theme.light;
+}
+
 @media (prefers-color-scheme: dark) {
-	:root {
-		@include colour.generate("primary", 190, 75%, 60%, $shade-multiplier: 0.6);
-
-		--cl-neutral-saturation: 30%;
-		--cl-neutral-500: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 65%);
-
-		--heading-primary: var(--cl-neutral-200);
-		--heading-secondary: var(--cl-secondary);
-		--text-primary: var(--cl-neutral-100);
-		--text-primary-shade: var(--cl-neutral-200);
-		--text-secondary: var(--cl-neutral-400);
-		--link-primary: var(--cl-primary);
-		--background-primary: var(--cl-neutral-800);
-		--background-primary-shade: var(--cl-neutral-900);
-		--background-secondary: var(--cl-neutral-700);
-		--background-secondary-tint: var(--cl-neutral-600);
-		--background-secondary-shade: var(--cl-neutral-800);
-		--midground: var(--cl-neutral-500);
-		--foreground: var(--cl-neutral-100);
-		--foreground-tint: var(--cl-neutral-000);
-		--foreground-shade: var(--cl-neutral-200);
-	}
-
-	.nav-bar__nav-icon,
-	#logo-img {
-		fill: white;
-	}
+  body {
+    @include theme.dark;
+  }
 }
