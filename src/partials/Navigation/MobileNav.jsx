@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import ToggleThemeButton from "../ToggleThemeButton/ToggleThemeButton";
 import "./MobileNav.scss";
 import "./DesktopNav.scss";
 
@@ -51,6 +52,9 @@ const MobileNav = function ({ routes }) {
 						<img className="nav__logo" src={logo} alt="" />
 					</Link>
 					<ul className="nav__social-links">
+						<li className="nav__social-link">
+							<ToggleThemeButton />
+						</li>
 						<li className="nav__social-link">
 							<Link to="https://www.facebook.com/thurtonashbypreschool/" target="_blank">
 								<img src={facebook} alt="" width="32" height="32" className="nav__social-icon" />
