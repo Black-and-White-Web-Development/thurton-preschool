@@ -27,6 +27,14 @@
 
 body {
   @include theme.light;
+  
+  &.dark {
+    @include theme.dark
+  }
+
+  &.light {
+    @include theme.light
+  }
 }
 
 @media (prefers-color-scheme: dark) {
