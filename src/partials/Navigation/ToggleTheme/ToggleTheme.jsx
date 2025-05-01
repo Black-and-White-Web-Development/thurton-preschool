@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
-import { useTheme } from "../../hooks/useTheme";
-import "./ToggleThemeButton.scss";
+import { useTheme } from "/src/hooks/useTheme";
+import "./ToggleTheme.scss";
 
 import sun from "/src/assets/icons/sun.svg";
 import moon from "/src/assets/icons/moon.svg";
 import moonOverSun from "/src/assets/icons/moon-over-sun.svg";
 
-const ToggleThemeButton = function () {
+const ToggleTheme = function () {
 	const iconRef = useRef(null);
 	const [areOptionsShowing, setAreOptionsShowing] = useState(false);
 	const { theme, toggleTheme } = useTheme();
@@ -76,4 +76,4 @@ const ToggleThemeButton = function () {
 	);
 };
 
-export default ToggleThemeButton;
+export default ToggleTheme;
