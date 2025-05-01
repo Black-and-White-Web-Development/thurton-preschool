@@ -1,10 +1,38 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Footer.scss";
 
+const API_URL = import.meta.env.VITE_CMS_URL;
+const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
+const FETCH_URL = `${API_URL}/api/policies?populate=document`;
+
 const Footer = function ({ siteInfo }) {
+	const [policies, setPolicies] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(FETCH_URL, {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${API_TOKEN}`,
+						"Content-Type": "application/json",
+					},
+				});
+				const data = await response.json();
+				setPolicies(data.data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<footer className="footer fb-col-wrapper">
+			{console.log(policies)}
 			<div className="footer__copyright-wrapper">
 				<h3 className="footer__copyright-heading">{siteInfo.siteTitle}</h3>
 				<p className="footer__copyright-text">
@@ -48,55 +76,19 @@ const Footer = function ({ siteInfo }) {
 				</div>
 				<div className="footer__links">
 					<h3 className="footer__links-heading">Policies</h3>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/safeguarding-policy.pdf"
-						className="footer__link"
-					>
-						Safeguarding
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/online-safety-policy.pdf"
-						className="footer__link"
-					>
-						Online Safety
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/first-aid-policy.pdf"
-						className="footer__link"
-					>
-						First Aid
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/promoting-positive-behaviour-policy.pdf"
-						className="footer__link"
-					>
-						Promoting Positive Behaviour
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/staffing-policy.pdf"
-						className="footer__link"
-					>
-						Staffing
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/admissions-and-charging-policy.pdf"
-						className="footer__link"
-					>
-						Admissions and Charging
-					</NavLink>
-					<NavLink
-						target="_blank"
-						to="/src/assets/docs/making-a-complaint-policy.pdf"
-						className="footer__link"
-					>
-						Making a Complaint
-					</NavLink>
+					{policies &&
+						policies.map(policy => {
+							return (
+								<NavLink
+									key={policy.id}
+									target="_blank"
+									to={API_URL + policy.document.url}
+									className="footer__link"
+								>
+									{policy.name}
+								</NavLink>
+							);
+						})}
 				</div>
 				<div className="footer__links">
 					<h3 className="footer__links-heading">Useful links</h3>
