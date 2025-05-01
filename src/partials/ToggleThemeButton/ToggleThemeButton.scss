@@ -6,6 +6,13 @@
 	border: none;
   background-color: transparent;
 
+  &--options-visible {
+    & .toggle-theme__icon {
+      transition: opacity 100ms;
+      opacity: 1 !important;
+    }
+  }
+
   &__options {
     position: absolute;
     top: 100%;
@@ -17,6 +24,16 @@
 
     padding-top: 8px;
     transform: translateX(-50%);
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: 800ms;
+  
+    
+    &--visible {
+      opacity: 1;
+      transition-duration: 200ms;
+    }
   }
 
   &__option {
