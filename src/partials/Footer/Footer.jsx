@@ -3,9 +3,8 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Footer.scss";
 
-const API_URL = import.meta.env.VITE_CMS_URL;
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/policies?populate=document`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
-const FETCH_URL = `${API_URL}/api/policies?populate=document`;
 
 const Footer = function ({ siteInfo }) {
 	const [policies, setPolicies] = useState([]);
@@ -13,7 +12,7 @@ const Footer = function ({ siteInfo }) {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch(FETCH_URL, {
+				const response = await fetch(API_URL, {
 					method: "GET",
 					headers: {
 						Authorization: `Bearer ${API_TOKEN}`,
@@ -82,7 +81,7 @@ const Footer = function ({ siteInfo }) {
 								<NavLink
 									key={policy.id}
 									target="_blank"
-									to={API_URL + policy.document.url}
+									to={policy.document.url}
 									className="footer__link"
 								>
 									{policy.name}
