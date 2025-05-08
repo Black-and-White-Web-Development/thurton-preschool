@@ -33,7 +33,6 @@ const TermDates = function ({ heading, body }) {
 	return (
 		<section id="term-dates" className="term-dates fb-col-wrapper">
 			<h2 className="term-dates__heading">{heading}</h2>
-			{console.log(terms)}
 			<div className="term-dates__content">
 				<div className="term-dates__dates-wrapper">
 					{terms.map(term => (
