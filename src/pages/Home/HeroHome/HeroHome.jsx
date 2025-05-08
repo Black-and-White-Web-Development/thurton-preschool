@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 import "./HeroHome.scss";
 import Video from "../Video/Video";
 
-import thurtonPromo from "/src/assets/videos/thurton-preschool-promo.mp4";
-
-const API_URL = `${import.meta.env.VITE_CMS_URL}/api/home?populate=pages`;
+const API_URL = `${
+	import.meta.env.VITE_CMS_URL
+}/api/home?populate[pages]=true&populate[heroMedia]=true`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const HeroHome = function () {
-	const [homepage, setHomepage] = useState({
+	const [content, setContent] = useState({
 		subheadline: "",
 		headline: "",
 		pages: [],
 		heading: "",
+		heroMedia: { url: "" },
 	});
 
 	useEffect(() => {
@@ -27,7 +28,7 @@ const HeroHome = function () {
 					},
 				});
 				const data = await response.json();
-				setHomepage(data.data);
+				setContent(data.data);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			}
@@ -38,11 +39,11 @@ const HeroHome = function () {
 
 	return (
 		<section className="hero--home">
-			<Video src={thurtonPromo} />
+			{content.heroMedia.url && <Video src={content.heroMedia.url} />}
 			<div className="hero--home__content fb-col-wrapper">
-				<h1 className="hero--home__heading">{homepage.headline}</h1>
+				<h1 className="hero--home__heading">{content.headline}</h1>
 				<div className="hero--home__body">
-					{homepage.subheadline
+					{content.subheadline
 						?.split("\n")
 						.filter(body => body.trim() !== "")
 						.map((body, i) => (
@@ -53,7 +54,7 @@ const HeroHome = function () {
 						))}
 				</div>
 				<div className="hero--home__actions">
-					{homepage.pages.map(link => (
+					{content.pages.map(link => (
 						<Link key={link.id} to={link.url} className="hero--home__cta">
 							{link.title}
 						</Link>
