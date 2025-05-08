@@ -3,14 +3,12 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Link } from "react-router-dom";
 import "./ContentBlock.scss";
 
-const API_URL = `${import.meta.env.VITE_CMS_URL}`;
-
 const ContentBlock = function ({ content }) {
 	return (
 		<article key={content.id} className="content-block">
 			{content.image && (
 				<img
-					src={API_URL + content.image.url}
+					src={content.image.url}
 					alt={content.image.alternativeText}
 					className="content-block__image"
 				/>
