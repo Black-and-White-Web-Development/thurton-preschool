@@ -14,7 +14,7 @@ const TeamMember = function ({ teamMember }) {
 					{teamMember.portrait ? (
 						<img
 							className="team-member__portrait-image"
-							src={API_URL + teamMember.portrait.url}
+							src={teamMember.portrait.url}
 							alt={teamMember.portrait.alternativeText || `Portrait of ${teamMember.name}`}
 						/>
 					) : (
