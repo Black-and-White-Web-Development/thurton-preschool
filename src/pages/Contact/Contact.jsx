@@ -6,9 +6,9 @@ import Hero from "../../partials/Hero/Hero";
 import OpeningTimes from "./OpeningTimes/OpeningTimes";
 import "./Contact.scss";
 
-import coverImg from "/src/assets/images/contact.jpg";
-
-const API_URL = `${import.meta.env.VITE_CMS_URL}/api/contact?populate=openingHours`;
+const API_URL = `${
+	import.meta.env.VITE_CMS_URL
+}/api/contact?populate=[openingHours]=true&populate[heroImage]=true`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Contact = function () {
@@ -16,6 +16,7 @@ const Contact = function () {
 		heading: "",
 		body: [],
 		contentBlocks: [],
+		heroImage: { url: "" },
 	});
 
 	useEffect(() => {
@@ -40,7 +41,7 @@ const Contact = function () {
 
 	return (
 		<>
-			<Hero heading="Contact" coverImg={coverImg} />
+			<Hero heading="Contact" coverImg={content.heroImage.url} />
 			<section className="contact fb-col-wrapper">
 				<h2 className="contact__heading">{content.contactHeading}</h2>
 				<div className="contact__wrapper">

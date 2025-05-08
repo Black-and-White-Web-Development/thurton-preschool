@@ -31,7 +31,6 @@ const Footer = function ({ siteInfo }) {
 
 	return (
 		<footer className="footer fb-col-wrapper">
-			{console.log(policies)}
 			<div className="footer__copyright-wrapper">
 				<h3 className="footer__copyright-heading">{siteInfo.siteTitle}</h3>
 				<p className="footer__copyright-text">

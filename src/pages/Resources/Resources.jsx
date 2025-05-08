@@ -5,13 +5,13 @@ import Ofsted from "./Ofsted/Ofsted";
 import TermDates from "./TermDates/TermDates";
 import "./Resources.scss";
 
-import coverImg from "/src/assets/images/resources.jpg";
-
-const API_URL = `${import.meta.env.VITE_CMS_URL}/api/resources`;
+const API_URL = `${import.meta.env.VITE_CMS_URL}/api/resources?populate[heroImage]=true`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Resources = function () {
-	const [content, setContent] = useState({});
+	const [content, setContent] = useState({
+		heroImage: { url: "" },
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -35,7 +35,7 @@ const Resources = function () {
 
 	return (
 		<>
-			<Hero heading="Resources" coverImg={coverImg} />
+			<Hero heading="Resources" coverImg={content.heroImage.url} />
 			<TermDates heading={content.termDatesHeading} body={content.termDatesBody} />
 			<Fees heading={content.feesHeading} body={content.feesBody} />
 			<Ofsted heading={content.ofstedHeading} body={content.ofstedBody} />

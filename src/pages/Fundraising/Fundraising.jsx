@@ -4,15 +4,15 @@ import Events from "./Events/Events";
 import Hero from "../../partials/Hero/Hero";
 import "./Fundraising.scss";
 
-import coverImg from "/src/assets/images/fundraising.jpg";
-
 const API_URL = `${
 	import.meta.env.VITE_CMS_URL
-}/api/fundraising?populate[contentBlocks][populate]=image`;
+}/api/fundraising?populate[contentBlocks][populate]=image&populate[heroImage]=true`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Fundraising = function () {
-	const [fundraising, setFundraising] = useState({});
+	const [content, setContent] = useState({
+		heroImage: { url: "" },
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -25,7 +25,7 @@ const Fundraising = function () {
 					},
 				});
 				const data = await response.json();
-				setFundraising(data.data);
+				setContent(data.data);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			}
@@ -36,11 +36,11 @@ const Fundraising = function () {
 
 	return (
 		<>
-			<Hero heading="Fundraising" coverImg={coverImg} />
-			<Events heading={fundraising.eventsHeading} body={fundraising.eventsBody} />
-			{fundraising.contentBlocks && (
+			<Hero heading="Fundraising" coverImg={content.heroImage.url} />
+			<Events heading={content.eventsHeading} body={content.eventsBody} />
+			{content.contentBlocks && (
 				<section className="fundraising__content-blocks fb-col-wrapper">
-					{fundraising.contentBlocks.map(block => (
+					{content.contentBlocks.map(block => (
 						<ContentBlock key={block.id} content={block} />
 					))}
 				</section>

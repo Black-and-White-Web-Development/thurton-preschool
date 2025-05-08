@@ -5,6 +5,11 @@
 
 	position: relative;
 
+  & video {
+    background: var(--cl-primary-shade);
+    background: linear-gradient(160deg, var(--cl-primary-tint), var(--cl-secondary-tint))
+  }
+
 	&__content {
 		box-sizing: border-box;
 		align-content: center;
