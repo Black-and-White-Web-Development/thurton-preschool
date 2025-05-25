@@ -4,7 +4,7 @@
 	--navigation-height: 80px;
 
 	position: relative;
-
+  
   & video {
     background: var(--cl-primary-shade);
     background: linear-gradient(160deg, var(--cl-primary-tint), var(--cl-secondary-tint))
@@ -17,10 +17,13 @@
 		padding-block-start: 32px;
 
 		@include u.breakpoint(medium) {
-			padding-block: 32px;
-			width: 100%;
 			position: absolute;
 			top: 50%;
+
+			padding-block: 32px;
+			width: 100%;
+      height: 100%;
+
 			transform: translate(0, -50%);
 
 			& > * {
