@@ -3,9 +3,10 @@
 .video {
 	display: flex;
 	position: relative;
-	height: 40vh;
-
+  height: 40vh;
+  
 	@include u.breakpoint(medium) {
+    min-height: 800px;
 		height: 80vh;
 	}
 
