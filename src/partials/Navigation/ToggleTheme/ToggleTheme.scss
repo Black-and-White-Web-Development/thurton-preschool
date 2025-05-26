@@ -25,9 +25,11 @@
 		padding-top: 8px;
 		transform: translateX(-50%);
 		opacity: 0;
-
+    
 		transition-property: opacity;
 		transition-duration: 800ms;
+    
+    pointer-events: none;
 
 		&--visible {
 			opacity: 1;
