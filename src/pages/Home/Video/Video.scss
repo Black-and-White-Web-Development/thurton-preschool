@@ -33,6 +33,8 @@
 	&__controls {
 		position: absolute;
 		inset: auto 0 0 auto;
+    z-index: 1;
+
 		display: flex;
 		gap: u.rem(16);
 		margin: u.rem(32);
