@@ -1,10 +1,70 @@
 @use "/src/scss/util" as u;
 
-.term,
-.holiday {
+.term {
 	padding: u.rem(32);
 	background-color: var(--background-primary-shade);
 	border-radius: var(--br-light);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    margin: 0;
+
+    text-wrap: balance;
+
+    transition-property: opacity;
+    transition-duration: 400ms;
+
+    &--collapsed {
+      opacity: 0.5;
+    }
+  }
+
+  &__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1ch;
+
+    border: none;
+    background-color: transparent;
+
+    font-family: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    transition-property: opacity;
+    transition-duration: 400ms;
+    
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--collapsed {
+      opacity: 0.4;
+    }
+  }
+  
+  &__control-icon {
+    width: u.rem(16);
+    height: u.rem(16);
+
+    transition-property: rotate;
+    transition-duration: 400ms;
+
+    &--collapsed {
+      rotate: 180deg;
+    }
+  }
+
+  &__dates-list {
+    margin-block-start: u.rem(32);
+  }
 
 	&__span {
 		border-top: solid 2px var(--background-secondary-shade);
