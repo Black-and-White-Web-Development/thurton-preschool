@@ -10,7 +10,7 @@ const API_URL = `${
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const TeamMembers = function ({ heading, body }) {
-	const [teamMembers, setTeamMembers] = useState([]);
+	const [content, setContent] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -23,7 +23,23 @@ const TeamMembers = function ({ heading, body }) {
 					},
 				});
 				const data = await response.json();
-				setTeamMembers(data.data);
+
+				const sortedData = data.data.sort((a, b) => {
+					const getPriority = member => {
+						const role = member.role?.toLowerCase() || "";
+						const hasPortrait = !!member.portrait?.data;
+
+						if (role === "play leader") return 0;
+						if (role === "assistant play leader") return 1;
+						if (role === "practitioner") return 2;
+						if (hasPortrait) return 3;
+						return 3;
+					};
+
+					return getPriority(a) - getPriority(b);
+				});
+
+				setContent(sortedData);
 			} catch (error) {
 				console.error("Error fetching staff members:", error);
 			}
@@ -46,13 +62,11 @@ const TeamMembers = function ({ heading, body }) {
 				/>
 			)}
 			<ul className="team-members__list">
-				{teamMembers
-					.sort((a, b) => a.id - b.id)
-					.map(member => (
-						<li key={member.id}>
-							<TeamMember teamMember={member} />
-						</li>
-					))}
+				{content.map(member => (
+					<li key={member.id}>
+						<TeamMember teamMember={member} />
+					</li>
+				))}
 			</ul>
 		</section>
 	);
