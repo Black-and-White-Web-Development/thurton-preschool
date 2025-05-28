@@ -12,6 +12,7 @@ import CookiePolicy from "/src/pages/legal/CookiePolicy";
 import Accessibility from "/src/pages/legal/Accessibility";
 import Navigation from "/src/partials/Navigation/Navigation";
 import Footer from "/src/partials/Footer/Footer";
+import PageNotFound from "./partials/PageNotFound/PageNotFound";
 
 const API_URL = `${import.meta.env.VITE_CMS_URL}/api/website-info`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
@@ -45,6 +46,7 @@ function App() {
 		{ path: "/resources", label: "Resources", page: <Resources /> },
 		{ path: "/fundraising", label: "Fundraising", page: <Fundraising /> },
 		{ path: "/contact", label: "Contact", page: <Contact /> },
+		{ path: "*", page: <PageNotFound /> },
 	];
 
 	const otherRoutes = [

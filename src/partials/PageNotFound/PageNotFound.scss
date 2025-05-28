@@ -1,0 +1,32 @@
+@use "/src/scss/util/" as u;
+
+.page-not-found {
+	&__text {
+		margin-block-start: u.rem(24);
+	}
+
+	&__link {
+		margin-block-start: u.rem(32);
+		border: solid 1px;
+		border-radius: var(--br-light);
+		padding: 0.75rem 1.5rem;
+		max-width: fit-content;
+
+		font-size: u.rem(16);
+		font-size: clamp(u.rem(16), 0.78125rem + 0.5vw, u.rem(18));
+		font-weight: 700;
+
+		color: white;
+		background-color: var(--cl-primary-shade);
+		border-color: transparent;
+		transition: 600ms;
+
+		&:hover {
+			text-decoration: none;
+			border-color: var(--cl-primary);
+			color: var(--cl-primary);
+			background-color: var(--background-secondary);
+			transition: 200ms;
+		}
+	}
+}
