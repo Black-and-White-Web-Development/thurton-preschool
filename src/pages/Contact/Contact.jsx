@@ -8,7 +8,7 @@ import "./Contact.scss";
 
 const API_URL = `${
 	import.meta.env.VITE_CMS_URL
-}/api/contact?populate=[openingHours]=true&populate[heroImage]=true`;
+}/api/contact?populate=[openingHours]=true&populate[heroImage]=true&populate[openingHours]=true`;
 const API_TOKEN = import.meta.env.VITE_CMS_API_TOKEN;
 
 const Contact = function () {
@@ -46,6 +46,7 @@ const Contact = function () {
 				<h2 className="contact__heading">{content.contactHeading}</h2>
 				<div className="contact__wrapper">
 					<div className="contact__form-wrapper">
+						{content && console.log(content)}
 						{content.contactBody && (
 							<BlocksRenderer
 								content={content.contactBody}
