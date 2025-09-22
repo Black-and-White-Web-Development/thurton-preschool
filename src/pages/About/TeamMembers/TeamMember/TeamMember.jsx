@@ -44,15 +44,19 @@ const TeamMember = function ({ teamMember }) {
 			<div className="team-member__qualifications">
 				<h4 className="team-member__subheading">{teamMember.firstName}&apos;s qualifications</h4>
 				<dl className="team-member__qualifications-list">
-					{teamMember.qualifications.map(qualification => (
-						<div key={qualification.id} className="team-member__qualification">
-							<dt className="team-member__qualification-name">
-								{qualification.inProgress ? "Currently studying " : ""}
-								{qualification.qualification.name}
-							</dt>
-							<dd className="team-member__qualification-year">{qualification.completionYear}</dd>
-						</div>
-					))}
+					{teamMember.qualifications.map(qualification => {
+						if (!qualification) return null;
+
+						return (
+							<div key={qualification.id} className="team-member__qualification">
+								<dt className="team-member__qualification-name">
+									{qualification.inProgress ? "Currently studying " : ""}
+									{qualification.qualification?.name}
+								</dt>
+								<dd className="team-member__qualification-year">{qualification.completionYear}</dd>
+							</div>
+						);
+					})}
 				</dl>
 			</div>
 		</article>
